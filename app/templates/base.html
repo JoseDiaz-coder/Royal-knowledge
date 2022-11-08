@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - Royal Knowledge</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<nav class="nav-bar">
+  <ul>
+    {% if g.user %}
+      <li><span> {{ g.user['username'] }}</span></li>
+      <li><a href="{{ url_for('auth.logout') }}">Cerrar sesion </a></li>
+    {% else %}
+    <li class="title-nav"><a href="{{ url_for('index.main_index') }}">Royal knowledge</a></li>
+      <li><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
+      <li><a href="{{ url_for('auth.login') }}">Iniciar sesion</a></li>
+      <li><a href="{{ url_for('index.about') }}">Quienes somos</a></li>
+      <li><a href="{{ url_for('index.content') }}">Nuestros programas</a></li>
+    {% endif %}
+  </ul>
+</nav>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+<section class="content">
+  {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

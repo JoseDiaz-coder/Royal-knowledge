@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,600&display=swap" rel="stylesheet"/>
+    <title>Iniciar sesion- Royal Knowledge</title>
+</head>
+
+<body>
+  <div class='login-content-container'>
+    <h1>Iniciar sesion a<br> Royal knowledge</h1>
+    <form method="post">
+      <input type="text" name="login" id="login" placeholder="Nombre de usuario o email" required />
+      <input type="password" name="password" id="password" placeholder="Contraseña" required />
+      <input type='submit' value="Iniciar sesion" id="login-button">
+    </form>
+  </div>
+<section class="content">
+  {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+  {% endfor %}
+  </section>
+    </div>
+</body>
+</html>

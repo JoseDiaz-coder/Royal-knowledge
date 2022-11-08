@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Royal knowledge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+      <a href="{{ url_for('index.main_index')}}"><p>Royal knowledge</p></a>
+            <nav>
+                <a href="#somos-royal">Quienes Somos</a>
+                <a href="#nuestros-programas">Nuestros Programas</a>
+                <a href="#caracteristicas">Características</a>
+      <a href="{{ url_for('auth.register') }}">Registrarse</a>
+      <a href="{{ url_for('auth.login') }}">Iniciar sesion</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Aprendé y refuerza <br>tus conocimientos </h1>
+        <button><a href="{{ url_for('auth.register') }}">APLICA YA!</a></button>
+    </section>
+
+    <section id="somos-royal">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2 >Somos <span class="color-acento">Royal knowledge</span></h2>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nuestros-programas">
+        <div class="container">
+            <h2>Nuestros Programas</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Bases <br>de datos</h3>
+                    <p>Aprende las sentencias basicas de las bases de datos CRUD (create, read, update y delete)
+                    y aprende manipular datos</p>
+                    <button><a href="{{ url_for('auth.register') }}">Registrate</a></button>
+                </div>
+                <div class="carta">
+                    <h3>Networking basico</h3>
+                    <p>Aprende los conocimientos basicos sobre las redes computacionales e iniciate en este camino</p>
+                    <button> <a href="{{ url_for('auth.register') }}">Registrate</a></button>
+                </div>
+                <div class="carta">
+                    <h3>Programacion basica</h3>
+                    <p>Iniciate en el desarrollo de software aprendiendo los conceptos basicos y fundamentos de programacion</p>
+                    <button><a href="{{ url_for('auth.register') }}">Registrate</a></button>
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <ul>
+                <li>✔️ 100% online</li>
+                <li>✔️ Soporte y ayduda</li>
+                <li>✔️ pendiente</li>
+                <li>✔️ pendiente</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="final">
+        <h2>Listo para aprender?</h2>
+        <button><a href="{{ url_for('auth.register') }}">Inicia sesion o registrate ya!</a></button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
