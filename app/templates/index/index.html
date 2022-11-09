@@ -3,6 +3,9 @@
 <head>
     <title>Royal knowledge</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,600&display=swap" rel="stylesheet"/>
 </head>
 <body>
     <header>
@@ -29,7 +32,7 @@
             <div class="texto">
 
                 <h2 >Somos <span class="color-acento">Royal knowledge</span></h2>
-                <p></p>
+                <p>Somos un equipo enfocado en la enseñanza, aprendizaje y apoyo en las areas de programacion, redes y bases de datos. <br> Nos basamos en que tu aprendizaje sea simple, facil, rapido y sobre todo gratuito, de esta manera te resultará aprender de una forma muy accesible.</p>
             </div>
         </div>
     </section>
@@ -40,13 +43,13 @@
             <div class="programas">
                 <div class="carta">
                     <h3>Bases <br>de datos</h3>
-                    <p>Aprende las sentencias basicas de las bases de datos CRUD (create, read, update y delete)
-                    y aprende manipular datos</p>
+                    <p>Aprende las sentencias basicas para la manipulación de datos, CRUD (create, read, update y delete) en una base de datos. 
+                    </p>
                     <button><a href="{{ url_for('auth.register') }}">Registrate</a></button>
                 </div>
                 <div class="carta">
                     <h3>Networking basico</h3>
-                    <p>Aprende los conocimientos basicos sobre las redes computacionales e iniciate en este camino</p>
+                    <p>Iniciate en este camino y aprende los conocimientos basicos sobre las redes computacionales. </p>
                     <button> <a href="{{ url_for('auth.register') }}">Registrate</a></button>
                 </div>
                 <div class="carta">
@@ -62,9 +65,8 @@
         <div class="container">
             <ul>
                 <li>✔️ 100% online</li>
+                <li>✔️ 100% gratuito</li>
                 <li>✔️ Soporte y ayduda</li>
-                <li>✔️ pendiente</li>
-                <li>✔️ pendiente</li>
             </ul>
         </div>
     </section>
