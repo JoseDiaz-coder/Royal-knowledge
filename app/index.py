@@ -13,5 +13,5 @@ def about():
     return render_template('index/about.html')
 
 @bp.route('/Nuestros-programas')
-def content():
-    return render_template('index/content.html')
+def home():
+    return render_template('index/home.html')

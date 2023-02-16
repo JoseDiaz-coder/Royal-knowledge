@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <title>{% block title %}{% endblock %} - Royal Knowledge</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/menu.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,600&display=swap" rel="stylesheet"/>
 <nav class="nav-bar">
   <ul>
     {% if g.user %}
-      <li><span> {{ g.user['username'] }}</span></li>
+    <li><a href="#"><span> {{ g.user['username'] }}</span></a></li>
       <li><a href="{{ url_for('auth.logout') }}">Cerrar sesion </a></li>
     {% else %}
     <li class="title-nav"><a href="{{ url_for('index.main_index') }}">Royal knowledge</a></li>

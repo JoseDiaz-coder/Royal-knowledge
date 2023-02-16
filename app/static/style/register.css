@@ -10,6 +10,7 @@ a{text-decoration: none;}
     color: blueviolet;
     font-size: 24px;
     font-weight:bold;
+    width: 200px;
 }
 
 h1{font-size: 15px;}
@@ -77,8 +78,9 @@ footer{
   left: 0;
   bottom:0;
   right:0;
-    background-color: rgb(225,225,225);
-    margin-top: 500px;
+   background-color: rgb(225,225,225);
+   margin-top: 500px;
+   display: block;
 }
 
 footer p{

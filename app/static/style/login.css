@@ -9,6 +9,22 @@ body {
   align-items: center;
   background-color: #eee;
 }
+.logo {
+    display: flex;
+    color: blueviolet;
+    font-size: 24px;
+    font-weight:bold;
+    justify-content: flex-start;
+    margin: 0;
+
+}
+span a{
+  color: blueviolet;
+}
+span {
+  padding: 10px 5px;
+  margin-top: 17px;
+}
 .container {
   max-width: 1400px;
   margin:auto;
@@ -50,13 +66,13 @@ body {
   box-shadow: rgba(175, 122, 197, 0.5);
 }
 .login-content-container form #login-button {
-  width: 280px;
-  height: 50px;
+  width: 250px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   background-color: blueviolet;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   cursor: pointer;
   padding: 12px 20px; 

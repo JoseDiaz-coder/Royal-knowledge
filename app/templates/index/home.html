@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+<h1>{% block title %}Bienvenido a Royal Knowledge{% endblock %}</h1>
+<ul class="menu">
+  <li><a href="{{ url_for('index.home') }}">Royal knowledge</a></li>
+  <li><a href="#">Cursos</a>
+    <ul class="menu">
+      <li><a href="#">Redes computacionales</a></li>
+      <li><a href="#">Bases de datos</a></li>
+      <li><a href="#">Programacion basica</a></li>
+    </ul>
+  </li>
+</ul>
+{% endblock %}

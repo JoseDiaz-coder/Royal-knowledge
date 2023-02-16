@@ -8,6 +8,14 @@
     <title>Iniciar sesion- Royal Knowledge</title>
 </head>
 
+
+  <header>
+    <div class="logo">
+      <a href="{{ url_for('index.main_index')}}"><p>Royal knowledge</p></a>
+      <nav>
+      </nav>
+    </div>
+  </header>
 <body>
   <div class='login-content-container'>
     <h1>Iniciar sesion a<br> Royal knowledge</h1>
@@ -16,6 +24,7 @@
       <input type="password" name="password" id="password" placeholder="Contraseña" required />
       <input type='submit' value="Iniciar sesion" id="login-button">
     </form>
+        <span>No tienes una cuenta? <a href="{{ url_for('auth.register') }}">Registrarse </a></span>
   </div>
 <section class="content">
   {% for message in get_flashed_messages() %}

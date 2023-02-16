@@ -73,12 +73,34 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index.content'))
+            return redirect(url_for('index.home'))
 
         flash(error)
 
     return render_template('auth/login.html')
 
+@bp.before_app_request
+def load_logged_user():
+    user_id = session.get('user_id')
+    if user_id is None:
+        g.user = None
+    else:
+        db, cursor = get_db()
+        cursor.execute(
+            'SELECT * FROM user WHERE id = %s ', (user_id,)
+        )
+        g.user = cursor.fetchone()
 
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('auth.login'))
+        return view(**kwargs)
 
+    return wrapped_view
 
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index.main_index'))
