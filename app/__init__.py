@@ -19,9 +19,13 @@ def create_app():
 
     from . import auth
     from . import index
+    from . import courses
+    from . import quiz
 
     app.register_blueprint(auth.bp)
     app.register_blueprint(index.bp)
+    app.register_blueprint(courses.bp)
+    app.register_blueprint(quiz.bp)
 
     return app
 

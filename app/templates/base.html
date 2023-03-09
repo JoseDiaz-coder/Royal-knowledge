@@ -1,25 +1,45 @@
 <!DOCTYPE html>
+<html>
 <title>{% block title %}{% endblock %} - Royal Knowledge</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style/menu.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,600&display=swap" rel="stylesheet"/>
+  
 <nav class="nav-bar">
-  <ul>
-    {% if g.user %}
+  <ul >
+    {% if  not g.user %}
+    <span>Iniciar sesion</span>
+    {% endif %}
     <li><a href="#"><span> {{ g.user['username'] }}</span></a></li>
       <li><a href="{{ url_for('auth.logout') }}">Cerrar sesion </a></li>
-    {% else %}
-    <li class="title-nav"><a href="{{ url_for('index.main_index') }}">Royal knowledge</a></li>
-      <li><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
-      <li><a href="{{ url_for('auth.login') }}">Iniciar sesion</a></li>
-      <li><a href="{{ url_for('index.about') }}">Quienes somos</a></li>
-      <li><a href="{{ url_for('index.content') }}">Nuestros programas</a></li>
-    {% endif %}
+    <li class="title-nav"><a href="{{ url_for('index.home') }}">Royal knowledge</a></li>
   </ul>
 </nav>
   <header>
-    {% block header %}{% endblock %}
+    {% block header %}
+    <div class="main-menu">
+      <nav class="main-menu-container">
+        <ul class="menu">
+          <li ><a href="{{ url_for('index.home') }}"><strong>
+                  Home
+              </strong></a></li>
+              <li class="link" ><a  href="{{ url_for('courses.catalog') }}">
+                  <strong>Cursos</strong>
+                </a></li>
+          <ul class="sub-menu" >
+            <li><a href="#">Redes computacionales</a></li>
+            <li><a href="#">Bases de datos</a></li>
+            <li><a href="#">Programacion basica</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('index.about') }}"><strong>Acerca de</strong></a></li>
+        <li><a href="{{ url_for('index.contact') }}"><strong>Contacto</strong></a></li>
+      </ul>
+
+      </nav>
+    </div>
+    {% endblock %}
   </header>
 <section class="content">
   {% for message in get_flashed_messages() %}
@@ -27,3 +47,11 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+    <footer>
+      <hr>
+        <div class="container">
+            <p>&copy; Derechos reservados</p>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+</html>

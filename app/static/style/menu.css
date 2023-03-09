@@ -13,7 +13,118 @@ body{
 ul{list-style: none;}
 a{text-decoration: none;}
 h1{font-size: 3.5em;}
-.menu{
-    margin: 0;
-    padding: 0;
+li{font-size: 1.25em;}
+
+nav {
+    background-color: rgb(245,245,245);
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
 }
+
+nav a{
+    color:black;
+
+}
+
+nav a:hover{
+    color: blueviolet;
+}
+ul {
+    display: block;
+}
+.nav-bar ul{
+    margin:0;
+    padding:0px 10px ;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-content: space-between;
+    height: 30px;
+}
+.nav-bar li{
+    padding-left: 10px;
+}
+ .menu{
+     position: relative;
+     color: black;
+    margin: 0;
+    margin-top: 50px;
+    padding: 25px;
+    height: 60px;
+    background-color: rgb(245,245,245);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
+
+}
+
+.menu  a{
+    font-size: 1.1em;
+    color: black;
+}
+.menu a:hover{
+    color:blueviolet;
+}
+.main-menu-container{
+    position:relative;
+}
+.sub-menu {
+    position: absolute;
+    left: 26em;
+    top: calc(100% + .02em);
+    background-color: rgb(245,245,245);
+    border-radius: .25em;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
+    pointer-events: none;
+    opacity: 0.5;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.menu > .link:hover + .sub-menu{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.sub-menu {
+    display: block;
+}
+.sub-menu li{
+    font-size: 1.1em; 
+    padding: 6px 9px;
+}
+.sub-menu a:hover{
+    color: blueviolet;
+}
+.menu:hover {
+    max-height:300px; 
+}
+.menu li:hover{
+    color:blueviolet;
+}
+footer{
+    background-color: rgb(230,230,230);
+}
+footer a{
+    margin:0;
+    padding: 20px;
+    color: rgba(100,100,100);
+    font-size: 1.2em;
+
+}
+footer a:hover{
+    color: blueviolet;
+}
+footer p{
+    margin: 0;
+    padding: 20px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+

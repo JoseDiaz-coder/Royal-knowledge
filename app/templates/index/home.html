@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
-{% block header %}
+{% block title %}Home{% endblock %}
+{% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
-<h1>{% block title %}Bienvenido a Royal Knowledge{% endblock %}</h1>
-<ul class="menu">
-  <li><a href="{{ url_for('index.home') }}">Royal knowledge</a></li>
-  <li><a href="#">Cursos</a>
-    <ul class="menu">
-      <li><a href="#">Redes computacionales</a></li>
-      <li><a href="#">Bases de datos</a></li>
-      <li><a href="#">Programacion basica</a></li>
-    </ul>
-  </li>
-</ul>
+<section id="hero">
+  <h1>Bienvenido a <br>Royal Knowledge</h1>
+   <button><a href="#">Tipos de cursos</a></button>
+</section>
+<section id='nuestros-programas'>
+  <div class='container'>
+    <h2>Contenidos.</h2>
+    <div class="programas">
+      <div class="carta">
+        <h3>Cursos online gratuitos</h3>
+        <p>Aqui podras realizar cursos gratuitos de calidad y<br> de forma online. Los cursos están en consntante actualización.</p>
+        <button><a href="{{url_for('courses.catalog')}}">Iniciar un curso</a></button>
+      </div>
+      <div class="carta">
+        <h3>Pon a prueba tus conocimientos </h3>
+        <p>Mediante un quiz verifica que tanto aprendiste. </p>
+        <button><a href="{{url_for('quiz.index')}}">Iniciar un quiz</a></button>
+      </div>
+      <div class="carta">
+        <h3>Tutorias personalizadas</h3>
+        <p>Podras contactarnos para responder a tus dudas<br> y poder darte tutoria.</p>
+        <button><a href="{{url_for('index.contact')}}">Contáctanos</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+<h2 id="tecs-title">Tecnologias Tratadas.</h2>
+<section id="tecs-usadas">
+
+</section>
 {% endblock %}

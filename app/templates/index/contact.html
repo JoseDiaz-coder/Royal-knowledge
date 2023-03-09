@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/contact.css') }}">
+<div class="hero-body" style=" padding: 10em 1.5em;">
+<h2>Contacto</h2>
+</div>
+<main class="contact-content">
+  <div class="contact-container">
+    <div style="border-radius: 4px; background: rgb(255,255,255); padding: 35px 45px; box-shadow: rgba(0,0,0,0.5) 0px 4px 12px; top:-100px; position:relative;">
+    <p>Si tienes alguna duda o quieres tener alguna tutoría escríbenos acá abajo para ponernos en contacto.</p>
+    <form name="contact" method="POST">
+      <div class="field">
+        <label class="label" for="name">Nombre</label>
+        <div class="control">
+          <input id="name" class="input" type="Text" name="name" placeholder="chanchito feliz">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+          <input id="email" class="input" type="email" name="email" placeholder="chanchito@feliz.com">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="message">Email</label>
+        <div class="control">
+          <input id="message" class="textarea"  name="message" placeholder="Hola soy un chanchito muy feliz....!">
+        </div>
+      </div>
+      <p>
+      <button class="button is-primary is-large is-fullwidth">Enviar</button>
+      </p>
+    </form>
+    <hr>
+  </div>
+  </div>
+</main>
+{% endblock %}
