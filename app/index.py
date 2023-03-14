@@ -25,3 +25,9 @@ def contact():
     if request.method == 'POST':
         pass
     return render_template('index/contact.html')
+
+@bp.route('/politicas-de-privacidad')
+@login_required
+def policies():
+    return render_template('index/politicas.html')
+

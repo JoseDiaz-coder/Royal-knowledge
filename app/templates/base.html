@@ -6,39 +6,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,600&display=swap" rel="stylesheet"/>
   
-<nav class="nav-bar">
-  <ul >
-    {% if  not g.user %}
-    <span>Iniciar sesion</span>
-    {% endif %}
-    <li><a href="#"><span> {{ g.user['username'] }}</span></a></li>
-      <li><a href="{{ url_for('auth.logout') }}">Cerrar sesion </a></li>
-    <li class="title-nav"><a href="{{ url_for('index.home') }}">Royal knowledge</a></li>
-  </ul>
-</nav>
-  <header>
-    {% block header %}
-    <div class="main-menu">
-      <nav class="main-menu-container">
-        <ul class="menu">
-          <li ><a href="{{ url_for('index.home') }}"><strong>
+  
+    {% if g.user %}
+<nav class="navbar is-fixed-top has-shadow">
+  <div class="navbar-brand">
+    <a class="navbar-item logo" href="{{ url_for('index.home') }}"><img  src="../static/media/rk-logo.jpg" width="50" height="50" ></a>
+  </div>
+  <div class="navbar-menu null">
+    <div class="navbar-start">
+          <a class="navbar-item" href="{{ url_for('index.home') }}"><strong>
                   Home
-              </strong></a></li>
-              <li class="link" ><a  href="{{ url_for('courses.catalog') }}">
+              </strong></a>
+                <a class="navbar-item link" href="{{ url_for('courses.catalog') }}">
                   <strong>Cursos</strong>
-                </a></li>
+                </a>
           <ul class="sub-menu" >
-            <li><a href="#">Redes computacionales</a></li>
-            <li><a href="#">Bases de datos</a></li>
-            <li><a href="#">Programacion basica</a></li>
+            <li><a class="navbar-item" href="#">Redes computacionales</a></li>
+            <li><a class="navbar-item" href="#">Bases de datos</a></li>
+            <li><a  class="navbar-item"href="#">Programacion basica</a></li>
           </ul>
         </li>
-        <li><a href="{{ url_for('index.about') }}"><strong>Acerca de</strong></a></li>
-        <li><a href="{{ url_for('index.contact') }}"><strong>Contacto</strong></a></li>
-      </ul>
-
-      </nav>
+        <a class="navbar-item" href="{{ url_for('index.policies') }}"><strong>politicas de privacidad</strong></a>
+        <a class="navbar-item" href="{{ url_for('index.about') }}"><strong>Acerca de</strong></a>
+        <a class="navbar-item" href="{{ url_for('index.contact') }}"><strong>Contacto</strong></a>
     </div>
+    <div class="navbar-end">
+    <a class="navbar-item" href="#"><span> {{ g.user['username'] }}</span></a>
+     <a class="navbar-item"href="{{ url_for('auth.logout') }}">Cerrar sesion </a>
+    </div>
+  </div>
+</nav>
+    {% endif %}
+  <header>
+    {% block header %}
     {% endblock %}
   </header>
 <section class="content">
