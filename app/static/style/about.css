@@ -1,0 +1,21 @@
+*, :after, :before {
+    box-sizing: inherit;
+}
+*{
+    box-sizing: border-box; 
+}
+html{
+    scroll-behavior: smooth;
+}
+h2{
+    font-size: 2em;
+}
+div{
+    display:block;
+}
+main{
+    display: block;
+}
+p *:last-child{
+    margin-bottom: 0;
+}

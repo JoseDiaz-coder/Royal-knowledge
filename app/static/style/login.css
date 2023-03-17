@@ -5,17 +5,17 @@
    a{text-decoration: none;}
 body {
   display: flex;
-  flex-direction:column; 
   align-items: center;
   background-color: #eee;
+  justify-content: space-around;
+}
+p {
+  margin-top:0;
 }
 .logo {
-    display: flex;
-    color: blueviolet;
-    font-size: 24px;
-    font-weight:bold;
-    justify-content: flex-start;
-    margin: 0;
+  align-self: flex-start;
+  margin-bottom: 100px;
+  margin-left:-77em;
 
 }
 span a{
@@ -30,16 +30,14 @@ span {
   margin:auto;
 }
 .login-content-container {
-  margin: auto;
   font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 40px;
-  margin-left: 150px;
-  margin-top: 130px;
-  width: 350px;
-  height: 350px;
+  padding: 50px 30px;
+  margin-left: -200px;
+  margin-top: 400px;
+  width: 360px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background-color: #F2F3F4;
@@ -54,19 +52,20 @@ span {
     box-shadow: rgba(175, 122, 197, 0.5);
 }
 .login-content-container form #password, #login{
-  width: 240px;
+  width: 100%;
   height: 33px;
   border-radius: 10px;
   padding: 12px 20px; 
   margin: 5px;
-  border: 1px solid #DECBC7;
+  border: 1px solid #decbc7;
   text-align: left;
   font-size: 20px ;
-}.login-content-container form #password, #login:hover{
+}
+.login-content-container form #password, #login:hover{
   box-shadow: rgba(175, 122, 197, 0.5);
 }
 .login-content-container form #login-button {
-  width: 250px;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   border: none;
@@ -87,17 +86,11 @@ span {
   transform: scale(1.02, 1.02);
 }
 .flash{
-  text-align: center;
-  border-radius: 15px;
-  border-color: rgba(230, 17, 0 , 0.5);
-  box-shadow: rgba(230, 17, 0, 0.5);
-  background-color: #e74c3c;
-  color: white;
-  font-size: 20px;
-  height: 50px;
-  width: 300px; 
-  margin-top: 50px;
-  margin-left:  8px;
+  display:inline-block;
+  margin: 0;
+  color: #e75725;
+  font-size: 14px;
+  font-weight:500;
 }
 footer{
   position: fixed;

@@ -6,7 +6,7 @@ from app.auth import login_required
 
 bp = Blueprint('courses', __name__, url_prefix='/cursos')
 
-@bp.route('/catalogo')
+@bp.route('/all-courses')
 @login_required
 def catalog():
     return render_template('courses/catalog.html')

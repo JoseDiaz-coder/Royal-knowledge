@@ -1,2 +1,67 @@
 {% extends 'base.html' %}
 {% block title %}Todos los cursos{%endblock%}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/catalog.css') }}">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="hero-body" style=" padding: 10em 1.5em;">
+<h1>algunos de nuestros cursos</h1>
+</div>
+
+<section id="course">
+  <div class="course-box">
+    <div class="courses">
+      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+        <span> Subido 15/03/23</span>
+        <h6>Curso de Java para principiantes.</h6>
+        <div class="star">
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          <span>(239)</span>
+        </div>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+
+      </div>
+    </div>
+    <div class="courses">
+      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+        <span> Subido 15/03/23</span>
+        <h6>Curso de Java para principiantes.</h6>
+        <div class="star">
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          <span>(239)</span>
+        </div>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+
+      </div>
+    </div>
+    <div class="courses">
+      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+        <span> Subido 15/03/23</span>
+        <h6>Curso de Java para principiantes.</h6>
+        <div class="star">
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          </i><i class='far fa-star'></i>
+          <span>(239)</span>
+        </div>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

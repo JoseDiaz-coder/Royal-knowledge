@@ -31,3 +31,4 @@ def contact():
 def policies():
     return render_template('index/politicas.html')
 
+

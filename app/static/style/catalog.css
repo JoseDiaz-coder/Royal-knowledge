@@ -1,0 +1,77 @@
+*, :after, :before {
+    box-sizing: inherit;
+}
+*{
+    box-sizing: border-box; 
+}
+html{
+    scroll-behavior: smooth;
+}
+h2{
+    font-size: 2em;
+}
+div{
+    display:block;
+}
+.contact-content:not(:last-child){
+    margin-bottom:1.5rem;
+}
+main{
+    display: block;
+}
+p *:last-child{
+    margin-bottom: 0;
+}
+.hero-body{
+    background-color: rgb(30,30,30);
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    background-size: cover;
+    height: 60vh;
+}
+
+.Container{
+    margin: 0 auto;
+    width: auto;
+    position:relative;
+
+}
+#course {
+  padding: 8vh 8vh 0 8vh;   
+  text-align: center;
+
+}
+
+#course .course-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+#course .courses {
+    text-align: start;
+    background-color: #f9f9ff;
+    height: 100%;
+}
+#course .courses img{
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (min-width: 1216px)
+ {
+    .about-container{
+    max-width : 1152px;
+    }
+}
+@media screen and (min-width: 1024px)
+ {
+    .about-container{
+    max-width: 960px;
+    }
+}
+ 

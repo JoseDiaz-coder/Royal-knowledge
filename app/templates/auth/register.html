@@ -11,7 +11,7 @@
 
   <header>
     <div class="logo">
-      <a href="{{ url_for('index.main_index')}}"><p>Royal knowledge</p></a>
+      <a href="{{ url_for('index.main_index')}}"><img src="../static/media/rk-logo.jpg" width="100" height="100"></a>
       <nav>
       </nav>
     </div>
@@ -25,16 +25,14 @@
       <input type="email" name="email" id="email" placeholder="Email (opcional)" />
       <input type="password" name="password" id="password" placeholder="Contraseña" required />
       <input type='submit' value="Registrarse" id="register-bt">
+  {% for message in get_flashed_messages() %}
+  <div class="flash"><p>{{ message }}</p></div>
+  {% endfor %}
     </form>
 
         <span>Ya tienes una cuenta?  <a href="{{ url_for('auth.login') }}">Inicia sesion </a></span>
         
   </div>
-<section class="content">
-  {% for message in get_flashed_messages() %}
-      <div class="flash">{{ message }}</div>
-  {% endfor %}
-</section>
     <footer>
         <div class="container">
             <p>&copy; Derechos reservados</p>

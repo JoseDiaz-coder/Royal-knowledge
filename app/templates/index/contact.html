@@ -3,12 +3,12 @@
 {% block title %}Contacto{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/information.css') }}">
 <div class="hero-body" style=" padding: 10em 1.5em;">
 <h2>Contacto</h2>
 </div>
-<main class="contact-content">
-  <div class="contact-container">
+<main class="Content">
+  <div class="Container">
     <div style="border-radius: 4px; background: rgb(255,255,255); padding: 35px 45px; box-shadow: rgba(0,0,0,0.5) 0px 4px 12px; top:-100px; position:relative;">
     <p>Si tienes alguna duda o quieres tener alguna tutoría escríbenos acá abajo para ponernos en contacto.</p>
     <form name="contact" method="POST">
@@ -27,7 +27,7 @@
       <div class="field">
         <label class="label" for="message">Email</label>
         <div class="control">
-          <input id="message" class="textarea"  name="message" placeholder="Hola soy un chanchito muy feliz....!">
+          <textarea id="message" class="textarea"  name="message" placeholder="Hola soy un chanchito muy feliz....!" required minlength="20"></textarea>
         </div>
       </div>
       <p>
