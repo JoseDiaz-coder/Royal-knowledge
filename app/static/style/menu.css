@@ -11,6 +11,7 @@ body{
     margin: 0;
     line-height: 1.7;
 }
+a span{font-size:18px;}
 ul{list-style: none;}
 a{cursor:pointer;text-decoration: none;}
 h1{font-size: 3.5em;}
@@ -96,7 +97,7 @@ nav a:hover{
     color: blueviolet;
 }
 footer{
-    background-color: rgb(230,230,230);
+    background-color: #D5D2D2;
 }
 footer a{
     margin:0;

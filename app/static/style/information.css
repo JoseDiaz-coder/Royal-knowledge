@@ -24,7 +24,8 @@ main{
     display: block;
 }
 .hero-body{
-    background-color: rgb(30,30,30);
+background: rgb(5,0,36);
+background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgba(0,212,255,1) 100%);
     color: white;
     display: flex;
     align-items: center;

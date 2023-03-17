@@ -7,23 +7,33 @@
 html{
     scroll-behavior: smooth;
 }
+h6{
+    color:black;
+    font-size: 17px;
+    padding: 5px 5px;
+    margin: 0 ;
+    margin-left:0;
+    width: auto;
+}
+
 h2{
     font-size: 2em;
+    padding: 10px 10px;
+    margin-left: 400px;
 }
+span{font-size: 13px;}
 div{
     display:block;
 }
-.contact-content:not(:last-child){
-    margin-bottom:1.5rem;
-}
-main{
-    display: block;
+p{
+    margin:0 0;
 }
 p *:last-child{
-    margin-bottom: 0;
+    margin:0 0;
 }
 .hero-body{
-    background-color: rgb(30,30,30);
+background: rgb(5,0,36);
+background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgba(0,212,255,1) 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -50,27 +60,54 @@ p *:last-child{
     grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
     grid-gap: 1rem;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 #course .courses {
     text-align: start;
     background-color: #f9f9ff;
     height: 100%;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 2px 1px 4px rgba(0,0,0,0.5);
+    cursor:pointer;
 }
 #course .courses img{
     width: 100%;
-    height: 60%;
+    height: 50%;
     background-size: cover;
     background-position: center;
 }
+#course .courses:hover {
+  transform: scale(1.05, 1.05);
+}
+
+#course .courses .details {
+    padding: 15px 15px 0 15px;
+}
+#course .courses .cost {
+    background-color: rgb(136,78,160);
+    font-size: 15px;
+    color: #fff;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgba(104,2,183, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 210px;
+} 
+
 @media screen and (min-width: 1216px)
  {
-    .about-container{
+    .Container{
     max-width : 1152px;
     }
 }
 @media screen and (min-width: 1024px)
  {
-    .about-container{
+    .Container{
     max-width: 960px;
     }
 }

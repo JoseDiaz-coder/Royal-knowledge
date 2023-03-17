@@ -6,20 +6,19 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <div class="hero-body" style=" padding: 10em 1.5em;">
-<h1>algunos de nuestros cursos</h1>
+<h1>Todos nuestros cursos</h1>
 </div>
-
+  <h2>Directorio de cursos</h2>
 <section id="course">
   <div class="course-box">
     <div class="courses">
-      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/java.jpg')}}"  >      <div class="details">
+  </a>
         <span> Subido 15/03/23</span>
-        <h6>Curso de Java para principiantes.</h6>
+        <a href="#" ><h6>Curso de Java desde cero.</h6></a>
+        <p>Aprende a programar con este curso de Java y conviertete en todo un pro.</p>
         <div class="star">
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
           <span>(239)</span>
         </div>
       </div>
@@ -29,14 +28,13 @@
       </div>
     </div>
     <div class="courses">
-      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/mysql.jpg')}}"  >      <div class="details">
+       </a>
         <span> Subido 15/03/23</span>
-        <h6>Curso de Java para principiantes.</h6>
+        <a href="#"><h6>Curso de base de datos con Mysql desde cero.</h6></a>
+        <p>Aprende base de datos relacionales con el gestor de base base de datos MySQL.</p>
         <div class="star">
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
           <span>(239)</span>
         </div>
       </div>
@@ -46,22 +44,20 @@
       </div>
     </div>
     <div class="courses">
-      <img  src="{{url_for('static', filename='media/front-end.jpg')}}"  >      <div class="details">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/networks.jpg')}}"  >      <div class="details">
+        </a>
         <span> Subido 15/03/23</span>
-        <h6>Curso de Java para principiantes.</h6>
+        <a href="#"><h6>Curso de redes computacionales con cisco packet tracer</h6></a>
+        <p>Aprende los conceptos basicos y aprende a diseñar redes computacionales con cisco Packet Tracer.</p>
         <div class="star">
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
-          </i><i class='far fa-star'></i>
           <span>(239)</span>
         </div>
       </div>
       <div class="cost">
         <span>Gratis</span>
-
       </div>
-    </div>
+    </ div>
   </div>
 </section>
 {%endblock%}
