@@ -73,13 +73,14 @@ p {
   cursor: pointer;
   padding: 12px 20px; 
   margin: 5px;
-  box-shadow: 0px 4px 4px 4px rgba(155,89,182,0.4);
 }
 #register-bt:hover{
+  border-color: blueviolet;
   transform: scale(1.05, 1.05);
+  box-shadow: 0px 4px 4px 4px rgba(155,89,182,0.4);
 }
-#password:hover, #email:hover, #username:hover {
-
+.signup-content-container #username:hover, #password:hover, #email:hover  {
+  border-color: blueviolet;
   transform: scale(1.02, 1.02);
 }
 footer{

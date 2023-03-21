@@ -80,7 +80,7 @@ nav a:hover{
     border-radius: .25em;
     box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0;
     transform: translateY(1px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }

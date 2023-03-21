@@ -76,13 +76,19 @@ span {
   cursor: pointer;
   padding: 12px 20px; 
   margin: 5px;
-  box-shadow: 0px 4px 4px 4px rgba(155,89,182,0.4);
 }
 
 .login-content-container #login-button:hover {
+  box-shadow: 0px 4px 4px 4px rgba(155,89,182,0.4);
   transform: scale(1.05, 1.05);
 }
-#login:hover, #password:hover {
+.login-content-container #login:hover {
+  border-color: blueviolet;
+  transform: scale(1.02, 1.02);
+} 
+
+.login-content-container #password:hover {
+  border-color: blueviolet;
   transform: scale(1.02, 1.02);
 }
 .flash{

@@ -1,1 +1,51 @@
 {% extends ('base.html') %}
+{% block title %}Quiz menu{%endblock%}
+
+{% block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/quiz.css') }}">
+<div class="hero-body" style=" padding: 10em 1.5em;">
+<h2>Menú de quizzes</h2>
+</div>
+
+<section id="quiz">
+  <div class="quiz-box">
+    <div class="quizzes">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/java.jpg')}}"  >      <div class="details">
+  </a>
+        <span> Subido 15/03/23</span>
+        <a href="#" ><h6>Quiz de Java</h6></a>
+        <p>Pon a prueba tu conocimiento y ve de lo que estas hecho.</p>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+
+      </div>
+    </div>
+    <div class="quizzes">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/mysql.jpg')}}"  >      <div class="details">
+       </a>
+        <span> Subido 15/03/23</span>
+        <a href="#"><h6>Quiz de MySQL.</h6></a>
+        <p>Pon a prueba tu conocimiento y ve de lo que estas hecho en menos de 5 minutos.</p>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+      </div>
+    </div>
+    <div class="quizzes">
+      <a href="#">
+      <img  src="{{url_for('static', filename='media/networks.jpg')}}"  >      <div class="details">
+        </a>
+        <span> Subido 15/03/23</span>
+        <a href="#"><h6>Quiz de redes computacionales.</h6></a>
+        <p>Pon a prueba tus conocimientos y ve de lo que estas hecho en menos de 5 minutos.</p>
+      </div>
+      <div class="cost">
+        <span>Gratis</span>
+      </div>
+    </ div>
+  </div>
+</section>
+{% endblock %}
