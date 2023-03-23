@@ -73,25 +73,32 @@ nav a:hover{
 }
 
 .sub-menu {
+    margin-top: 40;
     position: absolute;
+    display: none;
     left: 8em;
-    top: calc(100% + -1.1em);
-    background-color: rgb(245,245,245);
+    background-color: #fff;
     border-radius: .25em;
-    box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
-    pointer-events: none;
-    opacity: 0;
+    box-shadow: 0 3px 4px 0px rgba(0,0,0,.4);
+    z-index: 1;
     transform: translateY(1px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
-.navbar-start> .link:hover + .sub-menu{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+.sub-menu a{
+    padding: 10px 20px;
+    margin-left: -10px;
 }
+.dropdown{
+    padding-top: 0.8rem;
+}
+.dropdown:hover .sub-menu.dropdown-menu{
+    display: block;
+    transform: translateY(1px);
+}
+
 .sub-menu li{
     font-size: 1.1em; 
-    padding: 6px 9px;
+    padding: 4px 9px;
 }
 .sub-menu a:hover{
     color: blueviolet;
