@@ -23,5 +23,5 @@ def netw_index():
 
 @bp.route('/introduccion-a-la-programacion')
 @login_required
-def progr_index():
+def progr_java():
     return render_template('courses/progrIndex.html')

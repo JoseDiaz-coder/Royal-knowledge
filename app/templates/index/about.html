@@ -2,24 +2,57 @@
 {% block title%}Acerca de{%endblock%}
 
 {% block content%}
-<link rel="stylesheet" href="{{ url_for('static', filename='style/information.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/about.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="hero-body" style=" padding: 10em 1.5em;">
-<h2>Acerca de</h2>
+<h2>Acerca de nosotros</h2>
+<p class="description">Royal Knowledge es una plataforma de aprendizaje divertido y de calidad.
+<br>Con nuestros cursos, quiz y tutorias personalizadas podrás convertirte en un buen profesional.</p>
 </div>
 
-<main class="Content">
-  <div class="Container">
-    <div style="border-radius: 4px; background: rgb(255,255,255); padding: 35px 45px; box-shadow: rgba(0,0,0,0.5) 0px 4px 12px; top: -100px; position: relative;">
-      <p>
-        Queremos que seas un profesional de TI altamente instruido en ciencias de la computación, para que puedas resolver los problemas del día a día y dominar algoritmos en ciencias de computación.
-      </p>
-      <p>Comenzar nuestras carreras en la universidad no fue una tarea facil, hubo ocaciones donde no sabiamos como resolver un problema o por donde debiamos comenzar y entonces venia la frustración, pero esto no fue ningun incoveniente no tiramos la toalla y seguimos adelante. Corrimos con la suerte de tener muy bbuenos profesores a lo largo de estos años que nos motivaron y fue donde comenzamos a estudiar por nuestras cuentas fuera de la universidad como en cursos de internet, paginas web, libros, etc.</p>
-      <p>Por esta razon decidimos crear nuestro propio sitio web para estudiantes como nosostros, que tienen problemas con aprender algun tema o les cuesta mucho tratar de entender al profe, porque siendo honestos hay profesores no te transmiten el conocimiento de una forma en la que la puedas entender y es por esoque aqui te ayudaremos a mejorar y que vayas forjando ese profesional con el que tanto has soñado en convertirte.</p>
-      <p>La aventura universitaria es de las etapas más bonitas pero de las más dificiles tambien, pero nosotros te ayudaremos a que sea completamente más sencilla dandote consejos, tutorías y material para facilitar tu aprendizaje.
-    </p>
-    <p>En este sitio vamos a entregarte herramientas que puedas utilizar en tu día a día como estudiante en programación, bases de datos y redes computacionales. Queremos que llegues de la mejor forma posible al final de esta aventura y puedas convertirte en un gran profesional y algún día puedas aplicar estos conocimientos en tu vida laboral. <b>Animo, tu puedes con trabajo y dedicación, lo puedes conseguir. </b> </p>
-    <hr>
+<h2 style="text-align:center">Nuestro equipo</h2>
+
+<div class="row">
+  <div class="column" >
+    <div class="card ceo">
+      <img src="../../static/media/jose-diaz2.jpeg" alt="Jose" style="width:100%">
+      <div class="container" >
+        <h2>Jose Díaz</h2>
+        <p class="title">CEO & Fundador, desarrollador backend  Frontend </p>
+        <p>Mi nombre es Jose Manuel Diaz, soy fundador, desarrollador Backend y Frontend de Royal Knowledge.</p>
+        <p>&nbsp;</p>
+        <a href="https://www.facebook.com/manuel.diazhidalgo.3/" class="fa fa-facebook" target="blank"></a>
+        <a href="https://www.instagram.com/jose.diaz_p7/?hl=en" class=" fa fa-instagram" target="blank"></a>
+        <a href="https://www.instagram.com/jose.diaz_p7/?hl=en" class=" fa fa-github" target="blank"></a>
+      </div>
     </div>
   </div>
-</main>
+
+  <div class="column">
+    <div class="card">
+      <img src="../../static/media/yoselin-diaz.jpg" alt="Yoselin" style="width:100%">
+      <div class="container">
+        <h2>Yoselin Diaz</h2>
+        <p class="title">Co-fundadora, diseñadora y desarrolladora Frontend </p>
+        <p>Mi nombre es Yoselin Díaz,  soy co-fundadora, diseñadora y desarrolladora Frontend para Royal Knowledge.<br></p>
+        <p></p>
+        <a href="https://www.facebook.com/yoselin.diaz.399" class="fa fa-facebook" target="blank"></a>
+        <a href="https://www.instagram.com/yossdg_17/" class=" fa fa-instagram" target="blank"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="../../static/media/Naye-terrones.jpeg" alt="Naye" style="width:100%">
+      <div class="container">
+        <h2>Nayelli Terrones</h2>
+        <p class="title">Co-fundadora, diseñadora y desarrolladora Frontend</p>
+        <p>Mi nombre es Nayelli Terrones, soy co-fundadora, diseñadora y desarrollador Frontend de Royal Knowledge</p>
+        <a href="https://www.facebook.com/profile.php?id=100012153847377" class="fa fa-facebook" target="blank"></a>
+        <a href="https://www.instagram.com/naye_v_t/" class=" fa fa-instagram" target="blank"></a>
+      </div>
+    </div>
+  </div>
+</div>
 {%endblock%}

@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style/catalog.css') }}">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://kit.fontawesome.com/a335f5c22d.js" crossorigin="anonymous"></script>
 <div class="hero-body" style=" padding: 10em 1.5em;">
 <h1>Todos nuestros cursos</h1>
 </div>
@@ -13,13 +13,17 @@
 <section id="course">
   <div class="course-box">
     <div class="courses">
-      <a href="#">
+      <a href="{{url_for('courses.progr_java')}}">
       <img  src="{{url_for('static', filename='media/java.jpg')}}"  >      <div class="details">
   </a>
         <span> Subido 15/03/23</span>
-        <a href="#" ><h6>Curso de Java desde cero.</h6></a>
+        <a href="{{url_for('courses.progr_java')}}" ><h6>Curso de Java desde cero.</h6></a>
         <p>Aprende a programar con este curso de Java y conviertete en todo un pro.</p>
         <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
           <span>(239)</span>
         </div>
       </div>
@@ -29,13 +33,17 @@
       </div>
     </div>
     <div class="courses">
-      <a href="#">
+      <a href="{{url_for('courses.db_index')}}">
       <img  src="{{url_for('static', filename='media/mysql.jpg')}}"  >      <div class="details">
        </a>
         <span> Subido 15/03/23</span>
-        <a href="#"><h6>Curso de base de datos con Mysql desde cero.</h6></a>
+        <a href="{{url_for('courses.db_index')}}"><h6>Curso de base de datos con Mysql desde cero.</h6></a>
         <p>Aprende base de datos relacionales con el gestor de base base de datos MySQL.</p>
         <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
           <span>(239)</span>
         </div>
       </div>
@@ -45,13 +53,17 @@
       </div>
     </div>
     <div class="courses">
-      <a href="#">
+      <a href="{{url_for('courses.netw_index')}}">
       <img  src="{{url_for('static', filename='media/networks.jpg')}}"  >      <div class="details">
         </a>
         <span> Subido 15/03/23</span>
-        <a href="#"><h6>Curso de redes computacionales con cisco packet tracer</h6></a>
+        <a href="{{url_for('courses.netw_index')}}"><h6>Curso de redes computacionales con cisco packet tracer</h6></a>
         <p>Aprende los conceptos basicos y aprende a diseñar redes computacionales con cisco Packet Tracer.</p>
         <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
           <span>(239)</span>
         </div>
       </div>
