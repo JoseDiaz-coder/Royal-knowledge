@@ -180,3 +180,31 @@ align-items: center;
     }
 }
 
+@media screen and (min-width: 481px)
+ {
+    .navbar-menu{
+    flex-grow: 1;
+    flex-shrink: 0;
+    }
+}
+@media screen and (min-width: 481px)
+ {
+.navbar-item, .navbar-link{
+align-items: center;
+    display: flex;
+}
+    
+}
+@media screen and (min-width: 481px){
+    .navbar-start{
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 1024px){
+    .navbar-end{
+        justify-content: end;
+        margin-left: auto;
+    }
+}
+

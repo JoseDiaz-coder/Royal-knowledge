@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
 <section id="hero">
   <h1>Bienvenido a <br>Royal Knowledge</h1>
-   <button><a href="#">Tipos de cursos</a></button>
+  <button><a href="{{ url_for('courses.catalog') }}">Tipos de cursos</a></button>
 </section>
 <section id='nuestros-programas'>
   <div class='container'>
