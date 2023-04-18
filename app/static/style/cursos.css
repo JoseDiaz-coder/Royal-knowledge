@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ body{
+   background: white;
+ }
+ p,li,ol {
+font-size: inherit;
+    font-weight: 400;
+    max-width: 60rem;
+ }
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.hero-body{
+background: rgb(5,0,36);
+background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgba(0,212,255,1) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    background-size: cover;
+    height: 60vh;
+}
+.main-video{
+  margin-right: -13px;
+  margin-top: 66px;
+  right:0;
+}
+.about-course {
+  background-color: white;
+  margin: 1.5rem 0 3.2rem;
+  border-radius: 4px;
+  width: 100%;
+  padding: 2.4rem;
+  border-top: .5px solid #d1d7dc;
+}
+ .title a{
+   font-size: 1.2rem;
+   color: black;
+   padding: 10px;
+   text-align: justify;
+ }
+ .about-course-content p {
+   font-size: 1rem;
+   font-weight: 400;
+   padding: 10px;
+ }
+ .app-sidebar{
+background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    z-index: 1;
+ }
+.sidebar--sidebar {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+.sidebar--sidebar .sidebar--header {
+  margin-right: 0px;
+
+}
+.sidebar--header {
+  border: 1px solid #d1d7dc;
+  background-color: #fff; 
+  padding: 0.8rem 0.8rem 0.8rem 1.6rem;
+}
+.sidebar--content{
+    z-index: 1;
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #f7f9fa;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.section--section:first-child {
+  border-top: 0;
+}
+ .course-container {
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+     gap: 15px;
+     align-items: flex-start;
+
+ }
+ .section--section{
+   border-top: 0;
+ }
+ .accordion-menu li .dropdown-courses {
+   border-bottom: 1px solid #d1d7dc;
+ }
+ .accordion-menu:first-child {
+   border-top: 1px solid white;
+ }
+ .accordion-menu li.active .dropdown-courses img.arrow{
+  transform: rotate(90deg);
+ }
+ .dropdown-courses{
+   cursor: pointer;
+   display:block;
+   padding: 15px 15px 15px 45px;
+   border-bottom: 1px solid #d1d7dc;
+   border-top: 1px solid #d1d7dc;
+   transition: all 0.4s ease-out;
+   color: black;
+   font-weight: bold;
+   font-size: 1.2rem;
+   position: relative;
+   background: #f7f9fa;
+ }
+.dropdown-courses:hover{
+  background:#DADEDE;
+  background: -webkit-gradient(linear,0% 0%,0% 100%, from(#E9EAEA, to #DADEDE));
+}
+.dropdown-courses img {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+
+}
+.dropdown-courses .arrow{
+  font-size: 1.2rem;
+  right: 12px;
+  left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+.submenu-items{
+  display: none;
+  background: #fff;
+}
+.accordion-menu li.active .submenu-items{ 
+  display: block;
+}
+.submenu-items a {
+  display: block;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 12px 12px 45px;
+  transition: all 0.2s ease-out;
+
+}
+
+ .link li.active, .submenu-items a:hover{
+  background:#DADEDE;
+}
+
+.accordion-panel-module--outer-panel-toggler--AgeEB {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.6rem 0;
+}
+.accordion-panel-module--panel-toggler--1RjML {
+    color: #1c1d1f!important;
+    display: block;
+    text-align: left;
+    white-space: normal;
+    width: 100%;
+}
+
+.section--flex--1MW7w {
+    flex: 1;
+    min-width: 1px;
+}
+
+.section--section-heading--2k6aW {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+ .sidebar--content{
+   height: 700px;
+z-index: 1;
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #f7f9fa;
+    overflow-x: hidden;
+    overflow-y: auto;
+ }
+ .menu-link{
+padding: 5px 5px;
+font-size: 20px;
+  color: black;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+ }
+ .menu-item .menu-link:hover {
+    background-color: #fefe;
+ }
+.course-overview--grid-row--1nKqQ {
+    border-top: 1px solid #d1d7dc;
+    padding: 2.4rem;
+    display: flex;
+}
+.course-overview--grid-row--1nKqQ>*.course-overview--wide--37Lev {
+    width: 75%;
+}
+.course-overview--grid-row--1nKqQ>* {
+    width: 33%;
+    flex-shrink: 0;
+}
+footer .container{
+    height: 150px;
+    width: 75%;
+    display: flex;
+    align-items: flex-end;
+}

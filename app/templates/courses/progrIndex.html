@@ -3,14 +3,127 @@
 {% block title %}Programacion {% endblock %}
 
 {% block content%}
-<main class="container">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/cursos.css') }}">
+
+<main class="course-container">
   <section class="main-video">
-<iframe width="1000" height="600" src="https://www.youtube.com/embed/L1oMLsiMusQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<h3 class="title">Title of the playing video</h3>
+<iframe class="video" name="video-box" width="1000" height="500" src="https://www.youtube.com/embed/L1oMLsiMusQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2 class="title">Introduccion e instalacion JDK</h2>
 <div class="about-course">
-  <h3 clas="title">Acerca del curso</h3>
+  <h2 class="title">Acerca del curso</h2>
+  <span class="about-course-content">
+    <p>Conviértete en un experto en el lenguaje de programación Java <br>con este curso de que te enseña a programar desde cero</p>
+  </span>
 </div>
+<dl>
+  <div class="course-overview--grid-row--1nKqQ">
+    <dt>Caracteristicas</dt>
+    <dd>
+      <div>Nivel de dificultad: Principiante</div>
+      <div>Lenguaje: Español</div>
+      <div>Lecturas: 15</div>
+    </dd>
+  </div>
+  <div class="course-overview--grid-row--1nKqQ">
+    <dt>Descripción</dt>
+    <dd class="course-overview--wide--37Lev">
+      <p>
+Bienvenidos a este curso de Java! Acá incluímos todas las materias que son de primera necesidad para los desarrolladores de software. Con estas tecnologías podrás construir aplicaciones.
+      </p>
+      <p>Aquí podrás aprender a programar desde cero con Java, pensando que no tienes un nulo conocimento sobre programación o tienes el conocimiento basico</p>
+      <p>
+      <strong>Programa</strong>
+      </p>
+      <ol>
+        <p><strong>Seccion 1</strong></p>
+        <li>
+          <p>Introduccion e instalacion JDK</p>
+        </li>
+        <li>
+          <p>Identado, compilacion y ejecución del código.</p>
+        </li>
+        <li>
+          <p>Errores sintacticos y logicos</p>
+        </li>
+      </ol>
+
+      <ol>
+        <p><strong>Seccion 2</strong></p>
+        <li>
+          <p>Variables y tipos de datos</p>
+        </li>
+        <li>
+          <p>Errores sintacticos y logicos</p>
+        </li>
+      </ol>
+    </dd>
+  </div>
+</dl>
   </section>
+
+  <div class="app-sidebar" style="top:65px; height: calc(100% - 50px)">
+    <section class="sidebar--sidebar" data-porpuse="sidebar">
+      <div class="sidebar--header">
+        <h2 class="sidebar--heading">Contenido del curso</h2>
+      </div>
+      <div id="sidebar--scroll--container" class="sidebar--content">
+        <div class="sidebar-course-content">
+          <div class="accordion-panel section--section">
+            <ul class="accordion-menu">
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 1.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title"><a href="https://www.youtube.com/embed/L1oMLsiMusQ" target="video-box">Introduccion e instalacion JDK.</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cs5ymoNkrX8" target="video-box"> Indentado, Compilación y Ejecución del código</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 2.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  
+                  <li class="title"><a href="https://www.youtube.com/embed/vJTeIJx_Kn0" title="YouTube video player" target="video-box">Variables y tipos de datos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                </ul>
+              </li>
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 3.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title"><a href="https://www.youtube.com/embed/vJTeIJx_Kn0" title="YouTube video player" target="video-box">Variables y tipos de datos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                </ul>
+              </li>
+
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 4.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title"><a href="https://www.youtube.com/embed/vJTeIJx_Kn0" title="YouTube video player" target="video-box">Variables y tipos de datos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                  <li class="title"><a href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
+                </ul>
+              </li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
+<script src="../../static/js/side-bar.js">
+</script>
 {% endblock %}
 
