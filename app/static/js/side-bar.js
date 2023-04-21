@@ -1,32 +1,31 @@
-let listElements = document.querySelectorAll('.link ');
-let listInsideElements = document.querySelectorAll(' .title');
+(function(){
+ const listElements = document.querySelectorAll('.link');
+ const addClick = ()=> {
+     listElements.forEach(element =>{
+         element.addEventListener('click', (e)=>{
+console.log(element.children[1]);
+             let submenu = element.children[1];
+             let height = 0;
+             element.classList.toggle('active');
+             if (submenu.clientHeight === 0){
+                 height = submenu.scrollHeight;
+             }
+             submenu.style.height = '${height}px';
+             submenu.toggleClass('d-block');
+         });
+     });
+ }
+    addClick();
+})();
+let accordionElements = document.querySelectorAll('.title');
 
-listElements.forEach(listElement => {
-    listElement.addEventListener('click', ()=>{
-var panel = this.nextElementSibling;
-        if (listElement.classList.contains('active')){
-            listElement.classList.remove('active');
-        }else{
-            listElements.forEach (listE => {
-                listE.classList.remove('active');
-            })
-            listElement.classList.toggle('active');
-        }
-    })
-});
-
-
-listInsideElements.forEach(listElement => {
-    listElement.addEventListener('click', ()=>{
-var panel = this.nextElementSibling;
-        if (listElement.classList.contains('active')){
-            listElement.classList.remove('active');
-        }else{
-            listInsideElements.forEach (listE => {
-                listE.classList.remove('active');
-            })
-            listElement.classList.toggle('active');
-        }
-    })
+accordionElements.forEach(vid =>{
+    vid.addEventListener('click',  (e) =>{
+        e.stopPropagation();
+  accordionElements.forEach(remove =>{remove.classList.remove('active')});
+      vid.classList.add('active');
+        let title = vid.querySelector('li.title > a').innerHTML;
+        document.querySelector(' .main-video-title').innerHTML = title;
+    });
 });
 

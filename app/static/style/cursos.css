@@ -36,6 +36,11 @@ background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgb
   margin-top: 66px;
   right:0;
 }
+.main-video-title{
+  color: black;
+  padding: 10px 10px 8px 15px;
+  margin-left: 16px;
+}
 .about-course {
   background-color: white;
   margin: 1.5rem 0 3.2rem;
