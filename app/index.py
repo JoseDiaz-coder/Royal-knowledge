@@ -37,7 +37,7 @@ def contact():
         if error is None:
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
-            server.login("enterprise.royal.know@gmail.com", "Royalknowledge12")
+            server.login(, )
             server.sendmail("enterprise.royal.know@gmail.com", email, message)
             error = "Mensaje enviado"
 
