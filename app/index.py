@@ -1,6 +1,8 @@
 from  flask import (
-    Blueprint, render_template, redirect, request
+    Blueprint, render_template, redirect, request, flash, current_app
 )
+from flask_mail import Mail, Message
+import smtplib
 
 from app.auth import login_required
 
@@ -23,7 +25,28 @@ def home():
 @login_required
 def contact():
     if request.method == 'POST':
-        pass
+        email = request.form['email']
+        name = request.form['name']
+        messg = request.form['message']
+        error = None
+        message = "Hemos recibido tu correo, nos pondremos en contacto contigo lo mas pronto posible"
+
+        if not email or not name or not messg:
+            error = "Todos los campos son requeridos"
+
+        if error is None:
+            server = smtplib.SMTP("smtp.gmail.com", 587)
+            server.starttls()
+            server.login("enterprise.royal.know@gmail.com", "Royalknowledge12")
+            server.sendmail("enterprise.royal.know@gmail.com", email, message)
+            error = "Mensaje enviado"
+
+        flash(error)
+
+
+
+
+
     return render_template('index/contact.html')
 
 @bp.route('/politicas-de-privacidad')

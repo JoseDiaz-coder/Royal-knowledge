@@ -32,7 +32,7 @@ background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgb
     height: 60vh;
 }
 .main-video{
-  margin-right: -13px;
+  margin-right: -40px;
   margin-top: 66px;
   right:0;
 }
@@ -40,6 +40,58 @@ background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgb
   color: black;
   padding: 10px 10px 8px 15px;
   margin-left: 16px;
+}
+.carousel--module--container{
+  position: relative;
+  padding: 10px;
+  margin-left: 30px;
+}
+.carousel--scroll-port{
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-gap: 1.6rem;
+}
+.button--container, .module-nav-btn-container{
+  background-color: transparent;
+    padding: 0.8rem 0.4rem;
+    position: relative;
+    width: 100%;
+    border: none;
+}
+.carousel--module--container{
+border: 1px solid #d1d7dc;
+}
+.module-nav-btn-container span > a{
+  font-size: 20px;
+  color: black;
+}
+.module-nav-btn-container span > a:hover {
+  color: blueviolet; 
+}
+.carousel--scroll-port::-webkit-crollbar {
+  width: 10px;
+  height: 10px;
+}
+.carousel--scroll-port::-webkit-scrollbar-thumb{
+  background: black;
+  border-radius: 10px;
+}
+.carousel--scroll-port::-webkit-scrollbar-track{
+  background: transparent;
+}
+.slides {
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+@supports (scroll-snap-type) {
+  .carousel--scroll-port> a {
+    display: none;
+  }
+}
+.carousel--scroll-port > a:focus {
+  background: #000;
 }
 .about-course {
   background-color: white;
@@ -63,6 +115,7 @@ background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(93,9,121,1) 100%, rgb
  .app-sidebar{
 background: #fff;
     position: fixed;
+    margin-left: 1px;
     top: 0;
     right: 0;
     width: 25%;
@@ -127,7 +180,6 @@ background: #fff;
    background: #f7f9fa;
  }
 .dropdown-courses:hover{
-  background:#DADEDE;
   background: -webkit-gradient(linear,0% 0%,0% 100%, from(#E9EAEA, to #DADEDE));
 }
 .dropdown-courses img {
@@ -213,7 +265,7 @@ font-size: 20px;
  }
 .course-overview--grid-row--1nKqQ {
     border-top: 1px solid #d1d7dc;
-    padding: 2.4rem;
+    padding: 2.1rem;
     display: flex;
 }
 .course-overview--grid-row--1nKqQ>*.course-overview--wide--37Lev {

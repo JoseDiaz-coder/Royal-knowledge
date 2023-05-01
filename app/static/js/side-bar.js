@@ -3,7 +3,6 @@
  const addClick = ()=> {
      listElements.forEach(element =>{
          element.addEventListener('click', (e)=>{
-console.log(element.children[1]);
              let submenu = element.children[1];
              let height = 0;
              element.classList.toggle('active');
@@ -11,7 +10,6 @@ console.log(element.children[1]);
                  height = submenu.scrollHeight;
              }
              submenu.style.height = '${height}px';
-             submenu.toggleClass('d-block');
          });
      });
  }
@@ -26,6 +24,7 @@ accordionElements.forEach(vid =>{
       vid.classList.add('active');
         let title = vid.querySelector('li.title > a').innerHTML;
         document.querySelector(' .main-video-title').innerHTML = title;
+      window.scrollTo(0,0);
     });
 });
 
