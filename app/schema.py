@@ -18,8 +18,10 @@ instructions = [
         id INT PRIMARY KEY AUTO_INCREMENT,
         created_by INT NOT NULL,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        title TEXT NOT NULL,
         description TEXT NOT NULL,
         completed BOOLEAN NOT NULL,
+        category TEXT NOT NULL,
         FOREIGN KEY (created_by) REFERENCES user(id)
     );
     """

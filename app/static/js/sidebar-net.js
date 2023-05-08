@@ -1,7 +1,7 @@
 //hacer clic en seccion y desplegar submenu acordeon
 (function(){
  const listElements = document.querySelectorAll('.link');
- const addClick = ()=> {
+ const addClick = (e)=> {
      listElements.forEach(element =>{
          element.addEventListener('click', (e)=>{
              let submenu = element.children[1];
@@ -9,11 +9,9 @@
              element.classList.toggle('active');
              if (submenu.clientHeight === 0){
                  height = submenu.scrollHeight;
+                 console.log(height)
              }
              submenu.style.height = '${height}px';
-             let sideBarScroll = document.getElementByClassName('sidebar--scroll--container');
-             sideBarScroll.scrollTo(0,0);
-
 
          });
      });

@@ -1,35 +1,46 @@
+
 const questions =[
   {
-    question: "¿Que significan las siglas JDK?",
+    question: "¿?Cuál es el comando utilizado para Crear una tabla en MySQL",
     answers: [
-      { text: "Java virtual Machine", correct:false},
-      { text: "Java Disaster KEY", correct:false},
-      { text: "Java Developer Kit", correct:true},
-      { text: "José dice Kevin", correct:false},
+      { text: "CREATE DATABASE", correct:false},
+      { text: "CREATE QUE", correct:false},
+      { text: "CREATE TABLE", correct:true},
+      { text: "CREATE NEW TABLE", correct:false},
     ]
   },
 
   {
-    question: "¿Que es una variable?",
+    question: "¿Cuál es el comando utilizado para eliminar una tabla en MySQL?",
     answers: [
-      { text: "Una comida mexicana", correct:false},
-      { text: "Donde se almacenan datos de un programa", correct:true},
-      { text: "Donde guardo mis cosas personales", correct:false},
-      { text: "Donde se almacenan dulces", correct:false},
+      { text: "DELETE TABLE", correct:false},
+      { text: "DROP DATABASE", correct:false},
+      { text: "DROP TABLE", correct:true},
+      { text: "DROP VIEW", correct:false},
     ]
   },
 
   {
-    question: "¿Cuales son los tipos de datos en Java?",
+    question: "¿Cuál es el operador utilizado para comparar dos valores en MySQL?",
     answers: [
-      { text: "byte, short, int, long, float, double, boolean, char", correct:true},
-      { text: "byte, short, int, long, float, double, string, binario", correct:false},
-      { text: "pequeño, grande, mega grande, false, true", correct:false},
-      { text: "Jelly, beans, byte, short, long", correct:false},
+      { text: "==", correct:false},
+      { text: "=", correct:false},
+      { text: "!=", correct:false},
+      { text: "<>", correct:true},
+    ]
+  },
+  {
+    question: "¿Cual de los siguientes es un operador logico de MySQL?",
+    answers: [
+      { text: "OR", correct:true},
+      { text: "&&", correct:false},
+      { text: "!", correct:false},
+      { text: "==", correct:false},
     ]
   },
 ];
 
+console.log('${questions.length}');
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");

@@ -25,11 +25,10 @@
           <ul  >
             <li><a class="navbar-item" href="{{ url_for('courses.netw_index') }}">Redes computacionales</a></li>
             <li><a class="navbar-item" href="{{ url_for('courses.db_index') }}">Bases de datos</a></li>
-            <li><a  class="navbar-item"href="{{ url_for('courses.progr_java') }}">Programacion basica</a></li>
+            <li><a  class="navbar-item"href="{{ url_for('courses.progr_java') }}">Programacion en Java</a></li>
           </ul>
                 </div>
               </div>
-        <a class="navbar-item" href="{{ url_for('quiz.index') }}"><strong>Quiz</strong></a>
         <a class="navbar-item" href="{{ url_for('index.policies') }}"><strong>politicas de privacidad</strong></a>
         <a class="navbar-item" href="{{ url_for('index.about') }}"><strong>Acerca de</strong></a>
         <a class="navbar-item" href="{{ url_for('index.contact') }}"><strong>Contacto</strong></a>
@@ -45,12 +44,18 @@
     {% block header %}
     {% endblock %}
   </header>
-  
+  <body>
+
   {% block content %}{% endblock %}
+  </body> 
     <footer>
+  {% block footer   %}
         <div class="container">
-            <p>&copy; Derechos reservados</p>
+            <p>&copy; Derechos reservados 2023</p>
             <a href="#">Contacto</a>
+            <a href="{{ url_for('index.policies') }}">Politicas de privacidad</a>
         </div>
+        {%endblock%}
     </footer>
+
 </html>

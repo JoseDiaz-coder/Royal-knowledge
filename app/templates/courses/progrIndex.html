@@ -3,7 +3,9 @@
 {% block title %}Programacion {% endblock %}
 
 {% block content%}
+<script src="https://kit.fontawesome.com/a335f5c22d.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='style/cursos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <main class="course-container">
   <section class="main-video">
@@ -14,23 +16,66 @@
     <div class="carousel--scroll-port">
         <div class="button--container">
           <h2>
-            <button class="module-nav-btn-container">
-              <span><a href="#acerca-del-curso">Vista general</a></span>
+            <button class="module-nav-btn-container rk-btn-ghost" id="overview">
+              <span>Vista general</span>
             </button>
           </h2>
       </div>
         <div class="button--container">
           <h2>
-            <button class="module-nav-btn-container">
-              <span> <a href="#notas">Notas</a> </span>
+            <button class="module-nav-btn-container rk-btn-ghost" id="notas">
+              <span> Notas </span>
             </button>
           </h2>
         </div>
     </div>
   </div>
   <div class="slides">
-    <div class="notas" id="notas"></div>
-<div class="about-course" id="acerca-del-curso">
+    {% if g.user %}
+    <section class="course-notes-grid-row">
+    <div  id="notas-container" style="display:none;">
+      <div class="create-note-btn-container">
+        <button class="rk-btn create-new-note add" id="add">Crear nueva nota</button>
+        {% endif %}
+      </div>
+    </section>
+    <section class="course-notes-grid-row">
+<div class="box-create-note" id="box-create-note">
+  <form method="post" id="note-form">
+    <div class="control">
+      <input id="title-note" name="title-note" class="input" type="Text" placeholder="Titulo de la nota">
+    </div>
+    <div class="new-note">
+    <textarea type="textarea" name="description" id="description" placeholder="Escribe tu nota aqui" required style="width:800px; height: 100px;" ></textarea>
+    </div>
+    <div class="rk-footer-btns" style="text-align: right;">
+      <button type="button" id="cancel-btn" class="rk-btn btn-cancel rk-btn-ghost">Cancelar</button>
+        <button type ="submit" class="rk-btn btn-save new-note" id="save-changes">Guardar</button>
+    </div>
+  </form>
+
+</div>
+<div class="all-notes-container" id="all-notes-container" style="display: block;">
+  {% for note in notes %}
+  <div class="note-content">
+    <section class="note-header">
+      <div class="title-note-date">
+    <div class="title-note-usr">{{  note['title'] }}</div>
+      <div class="about">{{ note['created_at'].strftime('%Y-%m-%d') }}</div>
+      </div>
+    <div class="spacer"></div>
+    <button><img class="edit-delete" src="../../static/assets/edit.svg"></button>
+    <button><img class="edit-delete" src="../../static/assets/trash.svg"></button>
+    </section>
+    <div class="note-content-container">
+    <p>{{ note['description'] }}</p>
+    </div>
+  </div>
+  {% endfor %}
+    </div>
+    </section>
+    <div id="acerca-del-curso">
+<div class="about-course" >
   <h2 class="title">Acerca del curso</h2>
   <span class="about-course-content">
     <p>Conviértete en un experto en el lenguaje de programación Java <br>con este curso de que te enseña a programar desde cero</p>
@@ -56,7 +101,7 @@ Bienvenidos a este curso de Java! Acá incluímos todas las materias que son de 
       <strong>Programa</strong>
       </p>
       <ol>
-        <p><strong>Seccion 1</strong></p>
+        <p><strong>Seccion 1: Introduccion</strong></p>
         <li>
           <p>Introduccion e instalacion JDK</p>
         </li>
@@ -66,21 +111,74 @@ Bienvenidos a este curso de Java! Acá incluímos todas las materias que son de 
         <li>
           <p>Errores sintacticos y logicos</p>
         </li>
+          <p>Variables y tipos de datos</p>
+        <li>
+          <p>Operadores aritmeticos y prioridad de los signos</p>
+        </li>
+        <li>
+          <p>Quiz seccion 1</p>
+        </li>
       </ol>
 
       <ol>
-        <p><strong>Seccion 2</strong></p>
+        <p><strong>Seccion 2: Condicionales</strong></p>
         <li>
-          <p>Variables y tipos de datos</p>
+          <p>Estructuras condicionales if-else</p>
         </li>
         <li>
-          <p>Errores sintacticos y logicos</p>
+          <p>Estructuras condicionales anidadas</p>
+        </li>
+        <li>
+          <p>Como introducir datos desde teclado scanner</p>
+        </li>
+        <li>
+          <p>Condicionales compuestas con operadores logicos y relacionales</p>
+        </li>
+        <li>
+          <p>Sistema de control vocacional</p>
+        </li>
+        <li>
+          <p>Quiz section 2</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 3: Estructuras de control</strong></p>
+        <li>
+          <p>Estructuras de control switch-case</p>
+        </li>
+        <li>
+          <p>Ciclos o  bucles (Estructura repetitiva for)</p>
+        </li>
+        <li>
+          <p>Ciclos o bucles (Estructura repetitiva while)</p>
+        </li>
+        <li>
+          <p>Ciclos o bucles (Estructura repetitiva do-while)</p>
+        </li>
+        <li>
+          <p>Quiz section 3</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 4: Cadenas de caracteres</strong></p>
+        <li>
+          <p>Ejercicios para el desarrollo de la logica</p>
+        </li>
+        <li>
+          <p>Sucesión fibonacci</p>
+        </li>
+        <li>
+          <p>Cadenas de caracteres con el metodo equals</p>
+        </li>
+        <li>
+          <p>Quiz section 4</p>
         </li>
       </ol>
     </dd>
   </div>
 </dl>
 </div>
+    </div>
   </section>
 
   <div class="app-sidebar" style="top:65px; height: calc(100% - 50px)">
@@ -94,54 +192,197 @@ Bienvenidos a este curso de Java! Acá incluímos todas las materias que son de 
             <ul class="accordion-menu">
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 1.
+                  Seccion 1: Introduccion.
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title active"><a   href="https://www.youtube.com/embed/L1oMLsiMusQ" target="video-box">Introduccion e instalacion JDK.</a></li>
-                  <li class="title"><a   href="https://www.youtube.com/embed/Cs5ymoNkrX8" target="video-box"> Indentado, Compilación y Ejecución del código</a></li>
-                  <li class="title"><a  href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box"> Errores sintacticos y logicos</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/vJTeIJx_Kn0" title="YouTube video player" target="video-box">Variables y tipos de datos</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/Ifg_JzetpU4" target="video-box">Operadores aritmeticos y prioridad de los signos</a></li>
+                  <li class="title active">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a   href="https://www.youtube.com/embed/L1oMLsiMusQ" target="video-box">Introduccion e instalacion JDK.</a>
+                  </div>
+                  </li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a   href="https://www.youtube.com/embed/Cs5ymoNkrX8" target="video-box">Indentado, compilación y ejecución del código</a>
+                    </div>
+                  </li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a  href="https://www.youtube.com/embed/Cdr4wTz0Wro" target="video-box">Errores sintacticos y logicos</a>
+                    </div>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                        <img src="../../static/assets/play.svg"> 
+                      <div>
+                    <a href="https://www.youtube.com/embed/vJTeIJx_Kn0" title="YouTube video player" target="video-box">Variables y tipos de datos</a>
+                    </div>
+                  </li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/Ifg_JzetpU4" target="video-box">Operadores aritmeticos y prioridad de los signos</a>
+          </div>
+
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.programacion') }}" >Quiz seccion 1</a>
+          </div>
+
+                  </li>
                 </ul>
               </li>
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 2.
+                  Seccion 2: Condicionales
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
                   
-                  <li class="title"><a href="https://www.youtube.com/embed/pwVppK3RgyI" target="video-box">Estructuras condicionales if-else</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/pPG66_BZ8-c" target="video-box">Estructuras condicionales anidadas</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/WTgFsYc-RaA" target="video-box">Como introducir datos desde teclado con Scanner</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/i5y1agE0nLs" target="video-box">Condiciones compuestas con operadores logicos y relacionales</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/KjX5SX62e2Y" target="video-box">Sistema de control vacacional</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/pwVppK3RgyI" target="video-box">Estructuras condicionales if-else</a>
 
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/pPG66_BZ8-c" target="video-box">Estructuras condicionales anidadas</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/WTgFsYc-RaA" target="video-box">Como introducir datos desde teclado con Scanner</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/i5y1agE0nLs" target="video-box">Condiciones compuestas con operadores logicos y relacionales</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <img src="../../static/assets/play.svg"> 
+                      </div>
+                    <a href="https://www.youtube.com/embed/KjX5SX62e2Y" target="video-box">Sistema de control vacacional</a>
+                  </li>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.programacion_s2') }}" >Quiz seccion 2</a>
+                      </div>
+                  </li>
                 </ul>
               </li>
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 3.
+                  Seccion 3: Estructuras de control.
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title"><a href="https://www.youtube.com/embed/3asmLRCsASs" title="Estructuras de control switch-case" target="video-box">Estructuras de control switch-case</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/GnIdk6Rvj1I"   Errores sintacticos y logicos target="video-box">Ciclos o bucles (Estrcutura repetitiva for)</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/Q50omd0WitY" title="Ciclos o bucles (Estrcutura repetitiva while)" target="video-box">Ciclos o Bucles (Estructura repetitiva while)</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/5B-yd6EgpTc" title="Ciclos o bucles (Estrcutura repetitiva do-while)" target="video-box">Ciclos o Bucles (Estructura repetitiva do-while)</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/3asmLRCsASs" title="Estructuras de control switch-case" target="video-box">Estructuras de control switch-case</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/GnIdk6Rvj1I"   Errores sintacticos y logicos target="video-box">Ciclos o bucles (Estrcutura repetitiva for)</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/Q50omd0WitY" title="Ciclos o bucles (Estrcutura repetitiva while)" target="video-box">Ciclos o Bucles (Estructura repetitiva while)</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/5B-yd6EgpTc" title="Ciclos o bucles (Estrcutura repetitiva do-while)" target="video-box">Ciclos o Bucles (Estructura repetitiva do-while)</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.programacion_s3') }}" >Quiz seccion 3</a>
+          </div>
+
+                  </li>
                 </ul>
               </li>
 
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 4.
+                  Seccion 4: Cadenas de caracteres.
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title"><a href="https://www.youtube.com/embed/4MBWUxSR7_M" title="Ejercicios para el desarrollo de la lógica" target="video-box">Ejercicios para el desarrollo de la lógica</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/K0R5-9P05ek" title="Sucesión fibonacci" target="video-box">Sucesión fibonacci</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/YgNkoObH2IM" title="Cadenas de caracteres con el metodo equals" target="video-box">Cadenas de caracteres con el metodo equals</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/4MBWUxSR7_M" title="Ejercicios para el desarrollo de la lógica" target="video-box">Ejercicios para el desarrollo de la lógica</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/K0R5-9P05ek" title="Sucesión fibonacci" target="video-box">Sucesión fibonacci</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/YgNkoObH2IM" title="Cadenas de caracteres con el metodo equals" target="video-box">Cadenas de caracteres con el metodo equals</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.programacion_s4') }}" >Quiz seccion 4</a>
+          </div>
+
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -151,7 +392,9 @@ Bienvenidos a este curso de Java! Acá incluímos todas las materias que son de 
     </section>
   </div>
 </main>
-<script src="../../static/js/side-bar.js">
-</script>
+<script src="../../static/js/jquery-3.6.4.min.js" type="text/javascript"></script>
+<script src="../../static/js/notes.js" type="text/javascript"></script>
+<script src="../../static/js/side-bar.js" type="text/javascript"></script>
+<script src="../../static/js/caroussel.js" type="text/javascript"></script>
 {% endblock %}
 

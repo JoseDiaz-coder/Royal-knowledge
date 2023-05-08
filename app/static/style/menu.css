@@ -105,22 +105,22 @@ nav a:hover{
 }
 footer{
   border-top: .5px solid #d1d7dc;
-    background-color: #eee;
+    background-color: #1c1d1f;
 }
 footer a{
     margin:0;
     padding: 20px;
-    color: rgba(100,100,100);
+    color: #fff;
     font-size: 1.2em;
 
 }
 footer a:hover{
-    color: blueviolet;
+    text-decoration: underline;
 }
 footer p{
     margin: 0;
     padding: 20px;
-    color: rgb(100,100,100);
+    color: #fff;
 }
 
 footer .container{

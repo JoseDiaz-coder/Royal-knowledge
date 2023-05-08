@@ -38,13 +38,13 @@ margin:auto;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
     )
-    ,url("../media/home-banner-ud.jpg");
+    ,url("../media/home-banner-red.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

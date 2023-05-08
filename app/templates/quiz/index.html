@@ -23,11 +23,11 @@
       </div>
     </div>
     <div class="quizzes">
-      <a href="#">
+      <a href="{{ url_for('quiz.db') }}">
       <img  src="{{url_for('static', filename='media/mysql.jpg')}}"  >      <div class="details">
        </a>
         <span> Subido 15/03/23</span>
-        <a href="#"><h6>Quiz de MySQL.</h6></a>
+        <a href="{{ url_for('quiz.db') }}"><h6>Quiz de MySQL.</h6></a>
         <p>Pon a prueba tu conocimiento y ve de lo que estas hecho en menos de 5 minutos.</p>
       </div>
       <div class="cost">

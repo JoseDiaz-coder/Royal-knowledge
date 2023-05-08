@@ -21,6 +21,7 @@ def about():
 def home():
     return render_template('index/home.html')
 
+
 @bp.route('/contacto',methods=['GET','POST'])
 @login_required
 def contact():
@@ -37,16 +38,14 @@ def contact():
         if error is None:
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
-            server.login(, )
-            server.sendmail("enterprise.royal.know@gmail.com", email, message)
+            email_user = current_app.config['MAIL_USERNAME']
+            password = current_app.config['MAIL_PASSWORD']
+            server.login(email_user,password)
+            server.sendmail(email_user, email, message)
+            server.sendmail(email, email_user, messg)
             error = "Mensaje enviado"
 
         flash(error)
-
-
-
-
-
     return render_template('index/contact.html')
 
 @bp.route('/politicas-de-privacidad')

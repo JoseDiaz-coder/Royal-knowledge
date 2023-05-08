@@ -1,1 +1,416 @@
 {% extends 'base.html'%}
+
+{% block title %}Redes computacionales{%endblock%}
+
+{%block content%}
+<script src="https://kit.fontawesome.com/a335f5c22d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style/cursos.css') }}">
+<main class="course-container">
+  <section class="main-video">
+<iframe class="video" name="video-box" width="1000" height="500" src="https://www.youtube.com/embed/iNh-62Mf0O4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2 class="main-video-title">Modelo de capas OSI y TCP/IP</h2>
+<div class="carousel">
+  <div class="carousel--module--container">
+    <div class="carousel--scroll-port">
+        <div class="button--container">
+          <h2>
+            <button class="module-nav-btn-container rk-btn-ghost" id="overview">
+              <span>Vista general</span>
+            </button>
+          </h2>
+      </div>
+        <div class="button--container">
+          <h2>
+            <button class="module-nav-btn-container rk-btn-ghost" id="notas">
+              <span> Notas </span>
+            </button>
+          </h2>
+        </div>
+    </div>
+  </div>
+  <div class="slides">
+    {% if g.user %}
+    <section class="course-notes-grid-row">
+    <div  id="notas-container" style="display:none;">
+      <div class="create-note-btn-container">
+        <button class="rk-btn create-new-note add" id="add">Crear nueva nota</button>
+        {% endif %}
+      </div>
+    </section>
+    <section class="course-notes-grid-row">
+<div class="box-create-note" id="box-create-note">
+  <form method="post">
+    <div class="control">
+      <input id="title-note" name="title-note" class="input" type="Text" placeholder="Titulo de la nota">
+    </div>
+    <div class="new-note">
+    <textarea type="textarea" name="description" id="description" placeholder="Escribe tu nota aqui" required style="width:800px; height: 100px;" ></textarea>
+    </div>
+    <div class="rk-footer-btns" style="text-align: right;">
+      <button type="button" id="cancel-btn" class="rk-btn btn-cancel rk-btn-ghost">Cancelar</button>
+        <button type ="submit" class="rk-btn btn-save new-note" id="save-changes">Guardar</button>
+    </div>
+  </form>
+</div>
+    </section>
+<div class="show-notes">
+</div>
+    </div>
+    <div id="acerca-del-curso">
+<div class="about-course">
+  <h2 class="title">Acerca del curso</h2>
+  <span class="about-course-content">
+    <p>Introducete en el mundo de las redes computacionales y aprende a diseñar y crear redes con cisco packket tracer. </p>
+  </span>
+</div>
+<dl>
+  <div class="course-overview--grid-row--1nKqQ">
+    <dt>Caracteristicas</dt>
+    <dd>
+      <div>Nivel de dificultad: Principiante</div>
+      <div>Lenguaje: Español</div>
+      <div>Lecturas: 16</div>
+    </dd>
+  </div>
+  <div class="course-overview--grid-row--1nKqQ">
+    <dt>Descripción</dt>
+    <dd class="course-overview--wide--37Lev">
+      <p>
+      <b>Convierte en un experto de las redes computacionales.</b>
+      </p>
+      <p><b>En este curso aprenderas todo sobre redes computacionales</b><br>No necesitas experiencia alguna para poder comenzar y lo mejor de todo es que es completamente gratuito, así que no esperes más y comienza a aprender.</p>
+      <p>
+      <strong>Programa</strong>
+      </p>
+      <ol>
+        <p><strong>Seccion 1: Modelo OSI TCP/IP</strong></p>
+        <li>
+          <p>Modelo de capas OSI y TCP/IP</p>
+        </li>
+        <li>
+          <p>Como usar packket Tracer</p>
+        </li>
+        <li>
+          <p>Quiz seccion 1</p>
+        </li>
+      </ol>
+
+      <ol>
+        <p><strong>Seccion 2: Redes LAn y VLANS</strong></p>
+        <li>
+          <p>Redes LAN Ethernet</p>
+        </li>
+        <li>
+          <p>Mejoras de rendimiento gracias al switch</p>
+        </li>
+        <li>
+          <p>Dominios de colision y broadcast</p>
+        </li>
+        <li>
+          <p>Vlans</p>
+        </li>
+        <li>
+          <p>Quiz seccion 2</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 3: Cableado UTP y protocolos.</strong></p>
+        <li>
+          <p>Cableado UTP</p>
+        </li>
+        <li>
+          <p>Protocolos de enlace de datos</p>
+        </li>
+        <li>
+          <p>Quiz seccion 3</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 4: Redes WAN y wireless WAN.</strong></p>
+        <li>
+          <p>Redes WAN</p>
+        </li>
+        <li>
+          <p>Frame Relay</p>
+        </li>
+        <li>
+          <p>Quiz seccion 4</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 5: Direccionamiento y protocolos.</strong></p>
+        <li>
+          <p>Enrutamiento</p>
+        </li>
+        <li>
+          <p>Direccionamiento IP</p>
+        </li>
+        <li>
+          <p>Utilidades de capa 3</p>
+        </li>
+        <li>
+          <p>Quiz seccion 5</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 6: Protocolo TCP, UDP y cliente servidor.</strong></p>
+        <li>
+          <p>Protocolos TCP y UDP.</p>
+        </li>
+        <li>
+          <p>Cliente servidor</p>
+        </li>
+        <li>
+          <p>Quiz seccion 6</p>
+        </li>
+      </ol>
+    </dd>
+  </div>
+</dl>
+</div>
+    </div>
+  </section>
+
+  <div class="app-sidebar" style="top:65px; height: 100%;">
+    <section class="sidebar--sidebar" data-porpuse="sidebar">
+      <div class="sidebar--header">
+        <h2 class="sidebar--heading">Contenido del curso</h2>
+      </div>
+      <div id="sidebar--scroll--container" class="sidebar--content">
+        <div class="sidebar-course-content">
+          <div class="accordion-panel section--section">
+            <ul class="accordion-menu">
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 1: Modelo OSI TCP/IP.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title active">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a   href="https://www.youtube.com/embed/HiWtTHJ98_8" target="video-box">Modelo de capas OSI y TCP/IP</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a   href="https://www.youtube.com/embed/HiWtTHJ98_8" target="video-box">Como usar packet tracer</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap1') }}" >Quiz seccion 1</a>
+          </div>
+
+                  </li>
+                </ul>
+              </li>
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 2: Redes LAN y VLANS.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/oj4I6axc06Q" target="video-box">Redes LAN Ethernet</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/FNR7iqwZ8yM" target="video-box">Mejoras de rendimiento gracias al switch</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/ie-InaCEGDQ" target="video-box">Dominios de colision y broadcast</a></li>
+
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/n8j9UcDsV2g" target="video-box">Vlans</a></li> 
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap2') }}" >Quiz seccion 2</a>
+          </div>
+
+                  </li>
+                </ul>
+              </li>
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 3: Cableado UTP y protocolos.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/02FDqHocl1w" title="Borrado de registros" target="video-box">Cableado UTP</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/5-dd8KZPr6w" title="WHERE + AND"    target="video-box">Protocolos de enlace de datos</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap3') }}" >Quiz seccion 3</a>
+          </div>
+
+                  </li>
+                </ul>
+              </li>
+
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 4: Redes WAN y wireless WAN.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/d9tzsqD5Z0k" title="GROUP BY" target="video-box">Redes WAN</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/WWW8cty_E6Q" title="Funciones agregadas" target="video-box">Frame Relay</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap4') }}" >Quiz seccion 4</a>
+          </div>
+                  </li>
+                </ul>
+                  </li>
+
+
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 5: Direccionamiento y protocolos.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/ftfUkEx9UXI" title="Enrutamiento" target="video-box">Enrutamiento</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/lcX_DgkKkuI" title="Funciones agregadas" target="video-box">Direccionamiento IP</a></li>
+
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/7FGDGjjOfzQ" target="video-box">Utilidades de capa 3</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap5') }}" >Quiz seccion 5</a>
+          </div>
+                  </li>
+                </ul>
+                  </li>
+
+
+              <li class="link">
+                <div class="dropdown-courses">
+                  Seccion 6: Protocolo TCP, UDP y cliente-servidor.
+                  <img class="arrow" src="../../static/assets/arrow.svg">
+                </div>
+                <ul class="submenu-items">
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/4MSwQ9aIzq0" title="protocolos tcp y udp" target="video-box">Protocolos TCP y UDP</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/KA7Ngcgth0Q" title="Cliente-servidor" target="video-box">Cliente-servidor</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap6') }}" >Quiz seccion 6</a>
+          </div>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.net_cap6') }}" >Quiz seccion 6</a>
+          </div>
+                  </li>
+                </ul>
+                  </li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="../../static/js/sidebar-net.js">
+</script>
+<script src="../../static/js/caroussel.js">
+</script>
+{%endblock%}

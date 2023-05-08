@@ -2,15 +2,64 @@
 {% block title %}Bases de datos{%endblock%}
 
 {%block content%}
+<script src="https://kit.fontawesome.com/a335f5c22d.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='style/cursos.css') }}">
 <main class="course-container">
   <section class="main-video">
 <iframe class="video" name="video-box" width="1000" height="500" src="https://www.youtube.com/embed/nXy0l2j51yQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <h2 class="main-video-title">Introduccion </h2>
+<div class="carousel">
+  <div class="carousel--module--container">
+    <div class="carousel--scroll-port">
+        <div class="button--container">
+          <h2>
+            <button class="module-nav-btn-container rk-btn-ghost" id="overview">
+              <span>Vista general</span>
+            </button>
+          </h2>
+      </div>
+        <div class="button--container">
+          <h2>
+            <button class="module-nav-btn-container rk-btn-ghost" id="notas">
+              <span> Notas </span>
+            </button>
+          </h2>
+        </div>
+    </div>
+  </div>
+  <div class="slides">
+    {% if g.user %}
+    <section class="course-notes-grid-row">
+    <div  id="notas-container" style="display:none;">
+      <div class="create-note-btn-container">
+        <button class="rk-btn create-new-note add" id="add">Crear nueva nota</button>
+        {% endif %}
+      </div>
+    </section>
+    <section class="course-notes-grid-row">
+<div class="box-create-note" id="box-create-note">
+  <form method="post">
+    <div class="control">
+      <input id="title-note" name="title-note" class="input" type="Text" placeholder="Titulo de la nota">
+    </div>
+    <div class="new-note">
+    <textarea type="textarea" name="description" id="description" placeholder="Escribe tu nota aqui" required style="width:800px; height: 100px;" ></textarea>
+    </div>
+    <div class="rk-footer-btns" style="text-align: right;">
+      <button type="button" id="cancel-btn" class="rk-btn btn-cancel rk-btn-ghost">Cancelar</button>
+        <button type ="submit" class="rk-btn btn-save new-note" id="save-changes">Guardar</button>
+    </div>
+  </form>
+</div>
+    </section>
+<div class="show-notes">
+</div>
+    </div>
+    <div id="acerca-del-curso">
 <div class="about-course">
   <h2 class="title">Acerca del curso</h2>
   <span class="about-course-content">
-    <p>Aprenderás a consultar y modificar información de una base de datos. </p>
+    <p>Aprenderás a crear bases de datos, a consultar y modificar información de una base de datos. </p>
   </span>
 </div>
 <dl>
@@ -19,7 +68,7 @@
     <dd>
       <div>Nivel de dificultad: Principiante</div>
       <div>Lenguaje: Español</div>
-      <div>Lecturas: 16</div>
+      <div>Lecturas: 18</div>
     </dd>
   </div>
   <div class="course-overview--grid-row--1nKqQ">
@@ -33,7 +82,7 @@
       <strong>Programa</strong>
       </p>
       <ol>
-        <p><strong>Seccion 1</strong></p>
+        <p><strong>Seccion 1: Introduccion</strong></p>
         <li>
           <p>Introduccion </p>
         </li>
@@ -41,22 +90,81 @@
           <p>Instalar MySQL</p>
         </li>
         <li>
-          <p>Errores sintacticos y logicos</p>
+          <p>Crear bases de datos</p>
+        </li>
+        <li>
+          <p>Tipos de datos</p>
+        </li>
+        <li>
+          <p>Quiz seccion 1</p>
         </li>
       </ol>
 
       <ol>
-        <p><strong>Seccion 2</strong></p>
+        <p><strong>Seccion 2: Lenguaje de definición de datos (DDL).</strong></p>
         <li>
-          <p>Variables y tipos de datos</p>
+          <p>Crear tablas</p>
         </li>
         <li>
-          <p>Errores sintacticos y logicos</p>
+          <p>Crear tablas II</p>
+        </li>
+        <li>
+          <p>Insertar datos</p>
+        </li>
+        <li>
+          <p>Operadores relacionales</p>
+        </li>
+        <li>
+          <p>Quiz seccion 2</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 3: Lenguaje de manipulación de datos (DML).</strong></p>
+        <li>
+          <p>Borrado de registros</p>
+        </li>
+        <li>
+          <p>WHERE + AND</p>
+        </li>
+        <li>
+          <p>BETWEEN + IN</p>
+        </li>
+        <li>
+          <p>Condicion LIKE</p>
+        </li>
+        <li>
+          <p>Quiz seccion 3</p>
+        </li>
+      </ol>
+      <ol>
+        <p><strong>Seccion 4: consultas a la base de datos.</strong></p>
+        <li>
+          <p>Funciones agregadas</p>
+        </li>
+        <li>
+          <p>GROUP BY</p>
+        </li>
+        <li>
+          <p>HAVING</p>
+        </li>
+        <li>
+          <p>ORDER BY</p>
+        </li>
+        <li>
+          <p>LLave Foranea</p>
+        </li>
+        <li>
+          <p>Modificaciones</p>
+        </li>
+        <li>
+          <p>Quiz 4</p>
         </li>
       </ol>
     </dd>
   </div>
 </dl>
+</div>
+    </div>
   </section>
 
   <div class="app-sidebar" style="top:65px; height: calc(100% - 50px)">
@@ -70,52 +178,199 @@
             <ul class="accordion-menu">
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 1.
+                  Seccion 1: Introducción.
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title active"><a   href="https://www.youtube.com/embed/nXy0l2j51yQ" target="video-box">Introduccion</a></li>
-                  <li class="title"><a   href="https://www.youtube.com/embed/gcDQvoas6Rw" target="video-box">Instalación de MySQL</a></li>
-                  <li class="title"><a  href="https://www.youtube.com/embed/1DOd9kkhUjI" target="video-box">Crear Bases de datos</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/j_J5SLbHZ6U" title="YouTube video player" target="video-box">Tipos de datos</a></li>
+                  <li class="title active">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a   href="https://www.youtube.com/embed/nXy0l2j51yQ" target="video-box">Introduccion</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a   href="https://www.youtube.com/embed/gcDQvoas6Rw" target="video-box">Instalación de MySQL</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a  href="https://www.youtube.com/embed/1DOd9kkhUjI" target="video-box">Crear Bases de datos</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/j_J5SLbHZ6U" title="YouTube video player" target="video-box">Tipos de datos</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.db') }}" >Quiz seccion 1</a>
+          </div>
+
+                  </li>
                 </ul>
               </li>
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 2.
+                  Seccion 2: Lenguaje de definición de datos (DDL) .
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
                   
-                  <li class="title"><a href="https://www.youtube.com/embed/AL-Q8wk5KJw" target="video-box">Crear tablas</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/KIsSbQ1sFq4" target="video-box">Crear tablas II</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/QUOwD4doB_A" target="video-box">Insertar datos</a></li> <li class="title"><a href="https://www.youtube.com/embed/ESmADiAxjpc" target="video-box">Operadores relacionales</a></li> </ul>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/AL-Q8wk5KJw" target="video-box">Crear tablas</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/KIsSbQ1sFq4" target="video-box">Crear tablas II</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/QUOwD4doB_A" target="video-box">Insertar datos</a></li>
+
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/ESmADiAxjpc" target="video-box">Operadores relacionales</a></li> 
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.dbSeccion2') }}" >Quiz seccion 2</a>
+          </div>
+
+                  </li>
+                </ul>
               </li>
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 3.
+                  Seccion 3: Lenguaje de manipulación de datos (DML).
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title"><a href="https://www.youtube.com/embed/j-qhhAtu1yE" title="Borrado de registros" target="video-box">Borrado de registros</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/3e8t4tkl2Xk" title="WHERE + AND"    target="video-box">WHERE + AND</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/nGJ3TzJsTZs" title="BETWEEN + IN" target="video-box">BETWEEN + IN</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/83_VfEJo5kA" title="Condicion Like" target="video-box">Condicion LIKE</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/j-qhhAtu1yE" title="Borrado de registros" target="video-box">Borrado de registros</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/3e8t4tkl2Xk" title="WHERE + AND"    target="video-box">WHERE + AND</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/nGJ3TzJsTZs" title="BETWEEN + IN" target="video-box">BETWEEN + IN</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/83_VfEJo5kA" title="Condicion Like" target="video-box">Condicion LIKE</a></li>
+
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.dbSeccion3') }}" >Quiz seccion 3</a>
+          </div>
+
+                  </li>
                 </ul>
               </li>
 
               <li class="link">
                 <div class="dropdown-courses">
-                  Seccion 4.
+                  Seccion 4: Consultas a la base de datos.
                   <img class="arrow" src="../../static/assets/arrow.svg">
                 </div>
                 <ul class="submenu-items">
-                  <li class="title"><a href="https://www.youtube.com/embed/QVPJnHEhNvU" title="Funciones agregadas" target="video-box">Funciones agregadas</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/Rt76TcMgJJo" title="GROUP by" target="video-box">Sucesión fibonacci</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/YgNkoObH2IM" title="Cadenas de caracteres con el metodo equals" target="video-box">Cadenas de caracteres con el metodo equals</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/Rt76TcMgJJo" title="GROUP BY" target="video-box">GROUP BY</a></li>
-                  <li class="title"><a href="https://www.youtube.com/embed/7wre-TNGR5Q" title="HAVING" target="video-box">HAVING</a></li>
-              </li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/QVPJnHEhNvU" title="Funciones agregadas" target="video-box">Funciones agregadas</a></li>
+                  <li class="title">
+
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/Rt76TcMgJJo" title="GROUP BY" target="video-box">GROUP BY</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/7wre-TNGR5Q" title="HAVING" target="video-box">HAVING</a></li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/3-B-RNKmEcE" title="ORDER BY" target="video-box">ORDER BY</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/9V9xvBkVpw8" title="LLave foranea" target="video-box">LLave foranea</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                        <i class="fa-regular fa-circle-play"></i>
+                      </div>
+                    <a href="https://www.youtube.com/embed/xmVj5wdoU9U" title="Modificaciones" target="video-box">Modificaciones</a>
+                  </li>
+                  <li class="title">
+                    <div class="item-link">
+                      <div>
+                  <img class="quiz-icon" src="../../static/assets/quiz.svg">
+                      </div>
+                      <a href="{{ url_for('quiz.dbSeccion4') }}" >Quiz seccion 4</a>
+          </div>
+
+                  </li>
             </ul>
             </div>
         </div>
@@ -124,5 +379,7 @@
   </div>
 </main>
 <script src="../../static/js/side-bar.js">
+</script>
+<script src="../../static/js/caroussel.js">
 </script>
 {%endblock%}

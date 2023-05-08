@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quiz porgramacion</title>
+    <title>Quiz MySQL</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/quizApp.css') }}">
   </head>
   <body>
     <div class="app">
-      <button id="end-btn" ><a href="{{url_for('courses.progr_java')}}">Terminar</a></button>
-      <h1>Quiz de Java</h1>
+      <button id="end-btn" ><a href="{{url_for('courses.db_index')}}">Terminar</a></button>
+      <h1>Seccion 1: Introduccion</h1>
       <div class="quiz">
         <h2 id="question">Question goes here</h2>
         <div id="answer-buttons">
@@ -20,6 +20,6 @@
       </div>
 
     </div>
-    <script src="../../static/js/quiz.js"></script>
+    <script src="../../static/js/quizDb.js"></script>
   </body>
 </html>

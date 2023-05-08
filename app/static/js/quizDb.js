@@ -1,31 +1,41 @@
+
 const questions =[
   {
-    question: "¿Que significan las siglas JDK?",
+    question: "¿Cuál es el lenguaje de consulta utilizado en MySQL?",
     answers: [
-      { text: "Java virtual Machine", correct:false},
-      { text: "Java Disaster KEY", correct:false},
-      { text: "Java Developer Kit", correct:true},
-      { text: "José dice Kevin", correct:false},
+      { text: "PHP", correct:false},
+      { text: "HTML", correct:false},
+      { text: "SQL", correct:true},
+      { text: "Javascript", correct:false},
     ]
   },
 
   {
-    question: "¿Que es una variable?",
+    question: "¿Cuál es el comando utilizado para crear una nueva base de datos en MySQL?",
     answers: [
-      { text: "Una comida mexicana", correct:false},
-      { text: "Donde se almacenan datos de un programa", correct:true},
-      { text: "Donde guardo mis cosas personales", correct:false},
-      { text: "Donde se almacenan dulces", correct:false},
+      { text: "CREATE INDEX", correct:false},
+      { text: "CREATE TABLE", correct:true},
+      { text: "CREATE DATABASE", correct:false},
+      { text: "CREATE VIEW", correct:false},
     ]
   },
 
   {
-    question: "¿Cuales son los tipos de datos en Java?",
+    question: "¿Cuál es el comando para eliminar una base de datos?",
     answers: [
-      { text: "byte, short, int, long, float, double, boolean, char", correct:true},
-      { text: "byte, short, int, long, float, double, string, binario", correct:false},
-      { text: "pequeño, grande, mega grande, false, true", correct:false},
-      { text: "Jelly, beans, byte, short, long", correct:false},
+      { text: "DELETE DATABASE", correct:false},
+      { text: "DROP TABLE", correct:false},
+      { text: "DROP DATABASE", correct:true},
+      { text: "DROP VIEW", correct:false},
+    ]
+  },
+  {
+    question: "¿Cuál de estos es un tipo de dato valido en MySQL?",
+    answers: [
+      { text: "INT", correct:true},
+      { text: "String", correct:false},
+      { text: "Num", correct:false},
+      { text: "Smallchar", correct:false},
     ]
   },
 ];
