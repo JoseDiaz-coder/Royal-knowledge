@@ -11,14 +11,61 @@ bp = Blueprint('courses', __name__, url_prefix='/cursos')
 def catalog():
     return render_template('courses/catalog.html')
 
-@bp.route('/bases-de-datos')
+@bp.route('/bases-de-datos', methods=['POST', 'GET'])
 @login_required
 def db_index():
-    return render_template('courses/dbIndex.html')
+    category="database"
 
-@bp.route('/networking-basico')
+    if request.method == 'POST':
+        title = request.form.get('title-note')
+        note = request.form.get('description')
+        error = None
+
+        if not note:
+            error = "Necesitas escribir algo"
+        if error is not None:
+            flash(error)
+        else:
+            db, cursor = get_db()
+            cursor.execute(
+
+                'INSERT INTO note (title,description,completed,category, created_by)'
+                'VALUES (%s,%s,%s,%s,%s)',
+                (title,note,False,category,g.user['id'])
+            )
+            db.commit()
+
+            print("commit successfully")
+    notes = getNotes(category)
+    return render_template('courses/dbIndex.html',notes=notes)
+
+@bp.route('/networking-basico',methods=['POST', 'GET'])
 @login_required
 def netw_index():
+    category="networking"
+
+    if request.method == 'POST':
+        title = request.form.get('title-note')
+        note = request.form.get('description')
+        error = None
+
+        if not note:
+            error = "Necesitas escribir algo"
+        if error is not None:
+            flash(error)
+        else:
+            db, cursor = get_db()
+            cursor.execute(
+
+                'INSERT INTO note (title,description,completed,category, created_by)'
+                'VALUES (%s,%s,%s,%s,%s)',
+                (title,note,False,category,g.user['id'])
+            )
+            db.commit()
+            print("commit successfully")
+            notes = getNotes(category)
+            return render_template('courses/netwIndex.html',notes=notes)
+
     return render_template('courses/netwIndex.html')
 
 def getNotes(category):
@@ -58,9 +105,22 @@ def progr_java():
 
     return render_template('courses/progrIndex.html', notes=notes)
 
-@bp.route("/ajax",methods=["POST","GET"])
-def ajax():
-    if request.method == "POST":
-        todo = request.form.get("todo")
-        print(todo)
-    return render_template('courses/ajax.html')
+
+@bp.route('/delete/<int:id>', methods=[ 'POST','GET'])
+@login_required
+def delete(id):
+    try:
+        db, cursor = get_db()
+        cursor.execute('DELETE FROM note WHERE id=%s and created_by=%s',
+                       (id,g.user['id'])
+
+                       )
+        db.commit()
+        flash("Nota eliminada")
+        notes = getNotes()
+        return render_template('courses/progrIndex.html', notes=notes)
+    except:
+        flash('No se ha podido eliminar tu nota')
+
+        notes = getNotes("programacion")
+        return render_template('courses/progrIndex.html', notes=notes)

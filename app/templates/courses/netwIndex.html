@@ -39,7 +39,8 @@
     </section>
     <section class="course-notes-grid-row">
 <div class="box-create-note" id="box-create-note">
-  <form method="post">
+  <div id="box-create-note-form">
+  <form method="post" id="note-form">
     <div class="control">
       <input id="title-note" name="title-note" class="input" type="Text" placeholder="Titulo de la nota">
     </div>
@@ -51,6 +52,32 @@
         <button type ="submit" class="rk-btn btn-save new-note" id="save-changes">Guardar</button>
     </div>
   </form>
+  </div>
+
+<div class="all-notes-container" id="all-notes-container" style="display: none;">
+  {% for note in notes %}
+  <div class="note-content-row">
+    <div class="note-content-row-container">
+
+    <section class="note-header">
+      <div class="title-note-date">
+    <div class="title-note-usr">{{  note['title'] }}</div>
+      <div class="about">{{ note['created_at'].strftime('%Y-%m-%d') }}</div>
+      </div>
+    <div class="spacer"></div>
+    <button><img class="edit-delete" src="../../static/assets/edit.svg"></button>
+    <hr>
+    <form id="delete-form" action="{{ url_for('courses.delete', id=note['id']) }}" mehod="post">
+    <button type="submit" ><img class="edit-delete" src="../../static/assets/trash.svg"></button>
+</form>
+    </section>
+    <div class="note-content-container">
+    <p>{{ note['description'] }}</p>
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+    </div>
 </div>
     </section>
 <div class="show-notes">

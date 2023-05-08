@@ -57,10 +57,9 @@ border: 1px solid #d1d7dc;
   display: block;
 }
 .all-notes-container{
-  display: flex;
+  display: table;
     width: 75%;
-    flex-flow: column;
-  margin-left: ;
+  margin-left: 10rem;
 }
 
 .note-header{
@@ -78,13 +77,20 @@ border: 1px solid #d1d7dc;
     gap: 0.8rem;
     margin-top: 0.2rem;
 }
-.note-content{
+.note-content-row{
   display: table-row;
-  border: 1px solid #1c1d1f;
-  border-radius: 4px;
+
+}
+.note-content-row-container{
+display: table-cell;
+    width: 100%;
+    word-break: break-word;
+}
+.about{
+  font-size: 15px;
 }
 .spacer{
-  flex:1;
+  flex:2;
 }
 .edit-delete{
 margin-top: 0.2rem;
