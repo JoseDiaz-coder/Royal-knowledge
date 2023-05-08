@@ -45,7 +45,7 @@ def contact():
             server.sendmail(email, email_user, messg)
             error = "Mensaje enviado"
 
-        flash(error)
+        flash(error,"message")
     return render_template('index/contact.html')
 
 @bp.route('/politicas-de-privacidad')

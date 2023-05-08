@@ -1,0 +1,20 @@
+{% for note in notes %}
+    <div class="note-content-row-container">
+
+    <section class="note-header">
+      <div class="title-note-date">
+    <div class="title-note-usr">{{  note['title'] }}</div>
+      <div class="about">{{ note['created_at'].strftime('%Y-%m-%d') }}</div>
+      </div>
+    <div class="spacer"></div>
+    <button><img class="edit-delete" src="../../static/assets/edit.svg"></button>
+    <hr>
+    <form id="delete-form" action="{{ url_for('courses.delete', id=note['id']) }}" mehod="post">
+    <button type="submit" ><img class="edit-delete" src="../../static/assets/trash.svg"></button>
+</form>
+    </section>
+    <div class="note-content-container">
+    <p>{{ note['description'] }}</p>
+    </div>
+    </div>
+{% endfor %}

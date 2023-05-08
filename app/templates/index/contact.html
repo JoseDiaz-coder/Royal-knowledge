@@ -8,6 +8,9 @@
 <h2>Contacto</h2>
 </div>
 <main class="Content">
+  {% for message in get_flashed_messages() %}
+  <div class="flash"><p>{{ message }}</p></div>
+  {% endfor %}
   <div class="Container">
     <div style="border-radius: 4px; background: rgb(255,255,255); padding: 35px 45px; box-shadow: rgba(0,0,0,0.5) 0px 4px 12px; top:-100px; position:relative;">
     <p>Si tienes alguna duda o quieres tener alguna tutoría escríbenos acá abajo para ponernos en contacto.</p>
@@ -31,9 +34,6 @@
         </div>
       </div>
       <p>
-  {% for message in get_flashed_messages() %}
-  <div class="flash"><p>{{ message }}</p></div>
-  {% endfor %}
       <button class="button is-primary is-large is-fullwidth">Enviar</button>
       </p>
     </form>

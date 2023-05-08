@@ -92,6 +92,10 @@ p *:last-child {
     max-width: 960px;
     }
 }
+.flash{
+    color: green;
+    font-size: 1.2rem;
+}
 form {
     margin-left:0;
     margin-right:0;
