@@ -25,7 +25,7 @@ aboutBtn.addEventListener('click', () => {
 //handling create new note button and note field
 
 const newNoteBtn = document.getElementById('add');
-const newNote = document.getElementById('box-create-note');
+const newNote = document.getElementById('box-create-note-form');
 const cancelBtn = document.getElementById('cancel-btn');
 const saveNoteBtn = document.getElementById('save-changes')
 newNoteBtn.addEventListener('click',()=>{

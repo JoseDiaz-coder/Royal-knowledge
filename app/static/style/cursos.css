@@ -57,9 +57,10 @@ border: 1px solid #d1d7dc;
   display: block;
 }
 .all-notes-container{
-  display: table;
-    width: 600em;
-  margin-left: 10em;
+  display: flex;
+    width: 75%;
+    flex-flow: column;
+  margin-left: ;
 }
 
 .note-header{
@@ -166,7 +167,7 @@ margin-top: 3.2rem
   margin: 4px 50em;
 
 }
-.box-create-note{
+#box-create-note-form{
   display: none;
 }
 .create-new-note{

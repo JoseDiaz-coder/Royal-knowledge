@@ -41,6 +41,7 @@
     </section>
     <section class="course-notes-grid-row">
 <div class="box-create-note" id="box-create-note">
+  <div id="box-create-note-form">
   <form method="post" id="note-form">
     <div class="control">
       <input id="title-note" name="title-note" class="input" type="Text" placeholder="Titulo de la nota">
@@ -53,8 +54,8 @@
         <button type ="submit" class="rk-btn btn-save new-note" id="save-changes">Guardar</button>
     </div>
   </form>
+  </div>
 
-</div>
 <div class="all-notes-container" id="all-notes-container" style="display: block;">
   {% for note in notes %}
   <div class="note-content">
@@ -65,6 +66,7 @@
       </div>
     <div class="spacer"></div>
     <button><img class="edit-delete" src="../../static/assets/edit.svg"></button>
+    <hr>
     <button><img class="edit-delete" src="../../static/assets/trash.svg"></button>
     </section>
     <div class="note-content-container">
@@ -73,6 +75,7 @@
   </div>
   {% endfor %}
     </div>
+</div>
     </section>
     <div id="acerca-del-curso">
 <div class="about-course" >
